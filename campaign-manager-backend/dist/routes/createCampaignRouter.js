@@ -9,6 +9,6 @@ const createCampaignController_1 = require("../controllers/createCampaignControl
 const router = express_1.default.Router();
 // Define the route for creating a campaign
 console.log('createCampaignRouter.ts: Defining the route for creating a campaign');
-router.post('/api/v1/create_campaign', createCampaignController_1.createCampaignController);
+router.post('/v1/create_campaign', createCampaignController_1.createCampaignController);
 // Export the router
 exports.default = router;

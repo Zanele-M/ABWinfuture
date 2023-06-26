@@ -6,7 +6,7 @@ const router = express.Router();
 
 // Define the route for creating a campaign
 console.log('checkElementRouter.ts: Defining the route for checking if an element exists in the webiste');
-router.post('/api/v1/check_element', checkElementController);
+router.get('/v1/:type/:identifier/check_element', checkElementController);
 
 // Export the router
 export default router;
