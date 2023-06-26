@@ -30,7 +30,7 @@ const ABTestService = {
   async createCampaign(campaignData: CampaignData): Promise<void> {
     try {
       console.log(`Creating campaign: ${campaignData.campaign_name}`);
-      const response = await fetch(`http://localhost:3000/api/v1/create_campaign`, {
+      const response = await fetch(`https://172.104.247.115/main.js/v1/create_campaign`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
