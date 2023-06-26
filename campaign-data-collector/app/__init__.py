@@ -11,12 +11,14 @@ db = SQLAlchemy()
 redis_client = redis.Redis()
 
 def create_app():
+
+    env_path = Path('.') / '.env'
+    load_dotenv(dotenv_path=env_path)
+
     if os.getenv('FLASK_ENV') is None:
         print("'FLASK_ENV' is not set")
     else:
         print("'FLASK_ENV' is set to", os.getenv('FLASK_ENV'))
-    env_path = Path('.') / '.env'
-    load_dotenv(dotenv_path=env_path)
 
     app = Flask(__name__)
 
