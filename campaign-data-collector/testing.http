@@ -1,0 +1,85 @@
+
+Post http://localhost:5001/user_interactions
+Content-Type: application/json
+
+{
+  "variant_id": 69,
+  "interaction_type": "View"
+}
+
+###
+
+POST http://localhost:5000
+Content-Type: application/json
+
+{
+    "name": "zanele",
+    "email": "zsp220696.sibanyoni@gmail.com"
+ }
+
+###
+GET http://localhost:5000
+
+
+###
+GET http://localhost:5000/test_names
+
+###
+POST http://localhost:3000/api/v1/create_campaign
+Content-Type: application/json
+
+{
+  "campaign_name": "Microsoft",
+  "control_name": "Control",
+  "control_identifier": "Control Identifier",
+  "type": "headline",
+  "variants": [
+    {
+      "name": "Variant 1",
+      "identifier": "Variant 1 XPath"
+    },
+    {
+      "name": "Variant 2",
+      "identifier": "Variant 2 XPath"
+    }
+  ]
+}
+
+
+
+###
+GET http://localhost:5002/calculate_test_results?test_name=5678
+
+
+###
+POST http://localhost:5003/user_interactions
+Content-Type: application/json
+
+{
+"assigned_id": 43,
+"interaction_type": "clicks",
+"is_control": true
+}
+
+###
+GET http://localhost:5003/aggregate_interactions
+
+###
+GET http://localhost:5008/v1/get_results
+
+
+###
+POST http://localhost:3000/api/v1/runCampaigns
+Content-Type: application/json
+
+{
+  "cookies": ""
+}
+
+###
+PUT http://localhost:3000/campaigns/70/pause
+
+
+###
+
+PUT http://localhost:3000/campaigns/70/resume

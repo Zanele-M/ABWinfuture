@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "lib": ["es2015", "dom"],
+        "types": ["node"],
+      "target": "es6",
+      "module": "commonjs",
+      "outDir": "dist",
+      "strict": true,
+      "esModuleInterop": true
+    },
+    "include": ["src"],
+    "exclude": ["node_modules"]
+  }
+  
