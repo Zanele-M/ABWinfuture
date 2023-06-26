@@ -1,0 +1,42 @@
+.container {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.container h2 {
+  margin-bottom: 1rem;
+}
+
+.container h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.field {
+  margin-top: 1rem;
+}
+
+.button-primary {
+  color: #fff;
+  background-color: #3f51b5;
+}
+
+.MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+  border: none;
+}
+
+.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border: none;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border: none;
+}
+
+.line-input {
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+}
