@@ -37,6 +37,7 @@ const config: Configuration = {
   },
   devServer: {
     historyApiFallback: true,
+    allowedHosts: ['localhost', 'abtest.winfuture.mobi'],
   },
   plugins: [
     new HtmlWebpackPlugin({
