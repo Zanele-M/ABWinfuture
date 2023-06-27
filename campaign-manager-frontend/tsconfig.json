@@ -17,8 +17,8 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "preserve"
+    "noEmit": false, // Changed this line
+    "jsx": "react" // Changed this line, or use "react-jsx" for React 17 or later
   },
   "include": [
     "src"
