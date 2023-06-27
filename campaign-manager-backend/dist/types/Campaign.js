@@ -6,10 +6,10 @@ var CampaignType;
     CampaignType["Headline"] = "headline";
     CampaignType["Image"] = "image";
     CampaignType["Custom"] = "custom";
-})(CampaignType = exports.CampaignType || (exports.CampaignType = {}));
+})(CampaignType || (exports.CampaignType = CampaignType = {}));
 var CampaignStatus;
 (function (CampaignStatus) {
     CampaignStatus["Running"] = "running";
     CampaignStatus["Paused"] = "paused";
     CampaignStatus["Completed"] = "completed";
-})(CampaignStatus = exports.CampaignStatus || (exports.CampaignStatus = {}));
+})(CampaignStatus || (exports.CampaignStatus = CampaignStatus = {}));
