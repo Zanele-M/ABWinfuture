@@ -5,8 +5,8 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import pauseCampaignRouter from './routes/pauseCampaignRouter';
 import Rollbar from 'rollbar';
-import { resumeCampaignController } from './controllers/resumeCampaignController';
-import checkElementExistence from './controllers/checkElementController';
+import resumeCampaignRouter from './routes/resumeCampaignRouter';
+import checkElementRouter from './routes/checkElementRouter';
 
 dotenv.config();
 
@@ -43,8 +43,8 @@ app.use(rollbar.errorHandler());
 app.use(createCampaignRouter);
 app.use(runCampaignRouter);
 app.use(pauseCampaignRouter);
-app.use(resumeCampaignController)
-app.use(checkElementExistence)
+app.use(resumeCampaignRouter);
+app.use(checkElementRouter);
 
 // Define the port
 const port = 3000;
