@@ -111,6 +111,6 @@ const ABTestService = {
 //       throw error;
 //     }
 //   },
-// }
+ }
 
 export default ABTestService;
