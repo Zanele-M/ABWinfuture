@@ -11,7 +11,7 @@ bp = Blueprint('views', __name__)
 
 logger = logging.getLogger(__name__)
 
-@bp.route('/user_interactions', methods=['POST'])
+@bp.route('/v1/user_interactions', methods=['POST'])
 @cross_origin()
 def create_user_interaction():
     """

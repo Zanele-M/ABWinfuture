@@ -11,7 +11,7 @@ const ABTestService = {
    */
   async getAllCampaignResults(): Promise<CampaignResultResponse> {
     try {
-      const response = await fetch(`http://localhost:5008/v1/get_results`);
+      const response = await fetch(`'https://abtest.winfuture.mobi/results/v1/get_results`);
       const data = await response.json();
       console.log('API Response:', data); 
       return data;
@@ -30,7 +30,7 @@ const ABTestService = {
   async createCampaign(campaignData: CampaignData): Promise<void> {
     try {
       console.log(`Creating campaign: ${campaignData.campaign_name}`);
-      const response = await fetch(`https://172.104.247.115/backend/v1/create_campaign`, {
+      const response = await fetch(`https://abtest.winfuture.mobi/backend/v1/create_campaign`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ const ABTestService = {
    */
   async pauseCampaign(campaignId: number): Promise<void> {
     try {
-      const response = await fetch(`https://172.104.247.115/backend/v1/campaigns/${campaignId}/pause`, {
+      const response = await fetch(`https://abtest.winfuture.mobi/backend/v1/campaigns/${campaignId}/pause`, {
         method: 'PUT'
       });
   
@@ -76,7 +76,7 @@ const ABTestService = {
    */
   async resumeCampaign(campaignId: number): Promise<void> {
     try {
-      const response = await fetch(`https://172.104.247.115/backend/v1/campaigns/${campaignId}/resume`, {
+      const response = await fetch(`https://abtest.winfuture.mobibackend/v1/campaigns/${campaignId}/resume`, {
         method: 'PUT'
       });
 
@@ -98,7 +98,7 @@ const ABTestService = {
    */
   async checkElementExistence(identifier: string, type: string): Promise<boolean> {
     try {
-      const response = await fetch(`https://172.104.247.115/backend/v1/check_element/${type}/${identifier}`);
+      const response = await fetch(`https://abtest.winfuture.mobi/backend/v1/check_element/${type}/${identifier}`);
       const data: CheckElementResponse = await response.json();
       if (data.exists !== undefined) {
         return data.exists;

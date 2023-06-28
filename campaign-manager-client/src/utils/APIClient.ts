@@ -6,7 +6,7 @@ import { CookieData } from "../types/CampaignCookies";
  * @param {any} data - The interaction event data to send.
  */
 export function sendInteractionEvent(data: any): void {
-    fetch('https://abtest.winfuture.mobi/data_collector/user_interactions', {
+    fetch('https://abtest.winfuture.mobi/data_collector/v1/user_interactions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -23,7 +23,7 @@ export function sendInteractionEvent(data: any): void {
   }
 
 export async function runCampaigns(cookies: string) {
-  const response = await fetch('http://localhost:3000/api/v1/runCampaigns', {
+  const response = await fetch('https://abtest.winfuture.mobi/backend/v1/run_campaigns', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
