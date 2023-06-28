@@ -106,10 +106,10 @@ const CreateTest: React.FC<{ setCurrentTab: (tab: string) => void }> = (props) =
     event.preventDefault();
 
     try {
-      const elementExists = await ABTestService.checkElementExistence(campaignData.control_identifier, campaignData.type);
-      if(!elementExists) {
-        throw new Error('Element does not exist on the website');
-      }
+      // const elementExists = await ABTestService.checkElementExistence(campaignData.control_identifier, campaignData.type);
+      // if(!elementExists) {
+      //   throw new Error('Element does not exist on the website');
+      // }
       const updatedCampaignData = {
         ...campaignData,
         control_name: 'Original',
