@@ -44,7 +44,7 @@ app.use(createCampaignRouter);
 app.use(runCampaignRouter);
 app.use(pauseCampaignRouter);
 app.use(resumeCampaignRouter);
-app.use(checkElementRouter);
+//app.use(checkElementRouter);
 
 // Define the port
 const port = 3000;
