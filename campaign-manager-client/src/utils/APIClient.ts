@@ -6,7 +6,7 @@ import { CookieData } from "../types/CampaignCookies";
  * @param {any} data - The interaction event data to send.
  */
 export function sendInteractionEvent(data: any): void {
-    fetch('http://localhost:5003/user_interactions', {
+    fetch('https://abtest.winfuture.mobi/data_collector/user_interactions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
