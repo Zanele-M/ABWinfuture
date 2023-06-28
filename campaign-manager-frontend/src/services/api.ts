@@ -96,21 +96,21 @@ const ABTestService = {
    * @param type - The type of the element.
    * @returns A promise that resolves to a boolean indicating whether the element exists.
    */
-  async checkElementExistence(identifier: string, type: string): Promise<boolean> {
-    const url = 'http://192.168.0.138:8084/hello.html'
-    try {
-      const response = await fetch(`https://abtest.winfuture.mobi/backend/v1/check_element/${url}/${type}/${identifier}`);
-      const data: CheckElementResponse = await response.json();
-      if (data.exists !== undefined) {
-        return data.exists;
-      } else {
-        throw new Error("Invalid response from the server.");
-      }
-    } catch (error) {
-      console.error('Error checking element existence:', error);
-      throw error;
-    }
-  },
-}
+//   async checkElementExistence(identifier: string, type: string): Promise<boolean> {
+//     const url = 'http://192.168.0.138:8084/hello.html'
+//     try {
+//       const response = await fetch(`https://abtest.winfuture.mobi/backend/v1/check_element/${url}/${type}/${identifier}`);
+//       const data: CheckElementResponse = await response.json();
+//       if (data.exists !== undefined) {
+//         return data.exists;
+//       } else {
+//         throw new Error("Invalid response from the server.");
+//       }
+//     } catch (error) {
+//       console.error('Error checking element existence:', error);
+//       throw error;
+//     }
+//   },
+// }
 
 export default ABTestService;
