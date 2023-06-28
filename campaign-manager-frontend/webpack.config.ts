@@ -13,7 +13,7 @@ const config: Configuration = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
+    publicPath: '/frontend/',
   },
   module: {
     rules: [
@@ -37,7 +37,13 @@ const config: Configuration = {
   },
   devServer: {
     historyApiFallback: true,
-    allowedHosts: ['localhost', 'abtest.winfuture.mobi'],
+    client: {
+      webSocketURL: {
+        protocol: 'ws',
+        hostname: 'abtest.winfuture.mobi',
+        port: '8080',
+      }
+}
   },
   plugins: [
     new HtmlWebpackPlugin({

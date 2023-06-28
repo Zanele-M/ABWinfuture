@@ -36,22 +36,27 @@ exports.validateCheckElementExistence = [
  * Function to check if an element exists on the webpage.
  */
 const checkElementExistence = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { controlIdentifier, type, url } = req.body;
+    const { identifier, type } = req.params; // use req.params instead of req.body
+    const url = req.query.url; // use req.query for url
+    // check if the required params and query are provided
+    if (!identifier || !type || !url) {
+        return res.status(400).json({ error: 'Missing required parameters or query.' });
+    }
     try {
         const { data } = yield axios_1.default.get(url);
         const $ = cheerio_1.default.load(data);
         let elementExists = false;
         if (type === 'headline') {
-            elementExists = $('a').toArray().some(el => $(el).text().includes(controlIdentifier));
+            elementExists = $('a').toArray().some(el => $(el).text().includes(identifier));
         }
         else if (type === 'image') {
             const imgSources = $('img').map((i, img) => $(img).attr('src')).get();
-            elementExists = imgSources.includes(controlIdentifier);
+            elementExists = imgSources.includes(identifier);
         }
         res.status(200).json({ elementExists });
     }
     catch (error) {
-        const extra_data = { controlIdentifier, type, url };
+        const extra_data = { identifier, type, url };
         index_1.rollbar.error(`Error during website scraping: ${error}`, extra_data);
         console.error(`Error during website scraping: ${error}`);
         res.status(500).json({ error: 'An error occurred during website scraping.' });

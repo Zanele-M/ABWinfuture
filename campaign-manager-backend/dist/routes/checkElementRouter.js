@@ -9,6 +9,6 @@ const checkElementController_1 = __importDefault(require("../controllers/checkEl
 const router = express_1.default.Router();
 // Define the route for creating a campaign
 console.log('checkElementRouter.ts: Defining the route for checking if an element exists in the webiste');
-router.post('/v1/check_element', checkElementController_1.default);
+router.get('/v1/:type/:identifier/check_element', checkElementController_1.default);
 // Export the router
 exports.default = router;
