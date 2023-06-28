@@ -77,7 +77,7 @@ export async function runCampaign() {
 
     // Make API call
     try {
-      const response = await timeout(500, runCampaigns(cookies)); // 3 second timeout
+      const response = await timeout(3000, runCampaigns(cookies)); // 3 second timeout
       if (isApiResponseData(response)) {
         console.log(JSON.stringify(response));  // Log campaignCookies
         handleApiResponse(response, originalContent);
