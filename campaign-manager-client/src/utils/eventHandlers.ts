@@ -10,23 +10,23 @@ import { sendInteractionEvent } from './APIClient';
  * 
  * @returns {Function} - A function that takes an Event object and sends a 'click' interaction event to the backend if the click is not already cached in localStorage. It also caches the click after sending the event to prevent multiple events for the same click.
  */
-export function handleClickEvent(campaignId: number, assignedId: number, isControl: boolean): (event: Event) => void {
+export function handleClickEvent(campaign_id: number, assigned_id: number, is_control: boolean): (event: Event) => void {
   return function (event: Event) {
-    const key = `click-campaignId-${campaignId}-assignedId-${assignedId}`;
-    const cachedClick = localStorage.getItem(key);
+    const key = `click-campaignId-${campaign_id}-assignedId-${assigned_id}`;
+    const cachedClick = localStorage.getItem(key); //TODO move this so that you only store in the local storage
 
     // If the click is already cached, do nothing
     if (cachedClick) {
-      console.log(`Click for element with assignedId: ${assignedId} is already recorded.`);
+      console.log(`Click for element with assignedId: ${assigned_id} is already recorded.`);
       return;
     }
 
     console.log('Element clicked!');
-    console.log(`Handling click event for element with assignedId: ${assignedId}, isControl: ${isControl}`);
+    console.log(`Handling click event for element with assignedId: ${assigned_id}, isControl: ${is_control}`);
     const data = {
-      assignedId,
-      interactionType: 'clicks',
-      isControl,
+      assigned_id,
+      interaction_type: 'clicks',
+      is_control,
     };
     sendInteractionEvent(data);
 
@@ -83,21 +83,21 @@ export function addImpressionClickListener(campaignId: number, controlIdentifier
  * @param {number} assignedId - ID of the variant of the campaign
  * @param {boolean} isControl - Flag to indicate if the campaign is a control
  */
-function sendImpressionEvent(campaignId: number, assignedId: number, isControl: boolean): void {
-  const key = `impression-campaignId-${campaignId}-assignedId-${assignedId}`;
+function sendImpressionEvent(campaign_id: number, assigned_id: number, is_control: boolean): void {
+  const key = `impression-campaignId-${campaign_id}-assignedId-${assigned_id}`;
   const cachedImpression = localStorage.getItem(key);
 
     // If the impression is already cached, do nothing
     if (cachedImpression) {
-        console.log(`Impression for campaignId: ${campaignId} is already recorded.`);
+        console.log(`Impression for campaignId: ${campaign_id} is already recorded.`);
         return;
     }
 
-    console.log(`Sending impression event for campaignId: ${campaignId}, assignedId: ${assignedId}, isControl: ${isControl}`);
+    console.log(`Sending impression event for campaignId: ${campaign_id}, assignedId: ${assigned_id}, isControl: ${is_control}`);
     const data = {
-      assignedId,
-      interactionType: 'impression',
-      isControl,
+      assigned_id,
+      interaction_type: 'impression',
+      is_control,
     };
     sendInteractionEvent(data);
 
