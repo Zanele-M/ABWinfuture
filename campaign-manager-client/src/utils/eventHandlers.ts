@@ -95,7 +95,7 @@ function sendImpressionEvent(campaignId: number, assigned_id: number, is_control
     console.log(`Sending impression event for campaignId: ${campaignId}, assignedId: ${assigned_id}, isControl: ${is_control}`);
     const data = {
       assigned_id,
-      interaction_type: 'impression',
+      interaction_type: 'views',
       is_control,
     };
     sendInteractionEvent(data, key);
