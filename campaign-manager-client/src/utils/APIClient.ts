@@ -5,7 +5,7 @@ import { CookieData } from "../types/CampaignCookies";
  *
  * @param {any} data - The interaction event data to send.
  */
-export function sendInteractionEvent(data: any): void {
+export function sendInteractionEvent(data: any, key: string): void {
     fetch('https://abtest.winfuture.mobi/data_collector/v1/user_interactions', {
       method: 'POST',
       headers: {
@@ -15,6 +15,7 @@ export function sendInteractionEvent(data: any): void {
     })
       .then((response) => response.json())
       .then((data) => {
+        localStorage.setItem(key, 'true');
         console.log('Success:', data);
       })
       .catch((error) => {
