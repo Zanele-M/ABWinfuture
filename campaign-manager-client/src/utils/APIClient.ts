@@ -15,8 +15,13 @@ export function sendInteractionEvent(data: any, key: string): void {
     })
       .then((response) => response.json())
       .then((data) => {
-        localStorage.setItem(key, 'true');
-        console.log('Success:', data);
+        if ('error' in data){
+          console.log('Failure:', data);
+
+        } else {
+          localStorage.setItem(key, 'true');
+          console.log('Success', data)
+        }
       })
       .catch((error) => {
         console.error('Error:', error);
