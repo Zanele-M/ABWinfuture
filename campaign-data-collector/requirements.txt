@@ -9,3 +9,5 @@ scipy>=1.7.0
 statsmodels>=0.12.0
 requests
 rollbar
+python-dotenv
+gunicorn
