@@ -11,3 +11,4 @@ requests
 rollbar
 python-dotenv
 gunicorn
+flask_cors
