@@ -46,7 +46,7 @@ export function handleClickEvent(campaignId: number, assigned_id: number, is_con
  * 
  * A click event listener is also added to the campaign element. When the element is clicked, a 'click' interaction event is sent to the backend, and the click is cached in localStorage.
  */
-export function addImpresasionClickListener(campaignId: number, controlIdentifier: string, assignedId: number, isControl: boolean): void {
+export function addImpressionClickListener(campaignId: number, controlIdentifier: string, assignedId: number, isControl: boolean): void {
   console.log(`Searching for element with controlIdentifier: ${controlIdentifier}`);
   const matchingElement = document.querySelector(controlIdentifier);
 

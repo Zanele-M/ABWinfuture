@@ -11,7 +11,7 @@ const ABTestService = {
    */
   async getAllCampaignResults(): Promise<CampaignResultResponse> {
     try {
-      const response = await fetch(`'https://abtest.winfuture.mobi/results/v1/get_results`);
+      const response = await fetch(`https://abtest.winfuture.mobi/results/v1/get_results`);
       const data = await response.json();
       console.log('API Response:', data); 
       return data;

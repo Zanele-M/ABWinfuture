@@ -137,3 +137,4 @@ INFO:werkzeug: * Restarting with stat
 INFO:werkzeug:127.0.0.1 - - [28/Jun/2023 09:29:18] "[33mGET / HTTP/1.1[0m" 404 -
 INFO:werkzeug:127.0.0.1 - - [28/Jun/2023 09:43:29] "[33mGET / HTTP/1.1[0m" 404 -
 INFO:werkzeug:127.0.0.1 - - [28/Jun/2023 09:44:23] "[33mGET / HTTP/1.1[0m" 404 -
+ERROR:app.views:Input sanitization error: Invalid type or value for field 'interaction_type'

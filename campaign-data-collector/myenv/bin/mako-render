@@ -1,4 +1,4 @@
-#!/home/zaneles/ABWinfuture/campaign-data-collector/myenv/bin/python3
+#!/var/www/html/ABWinfuture/campaign-data-collector/myenv/bin/python3.9
 # -*- coding: utf-8 -*-
 import re
 import sys

@@ -1,0 +1,160 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.findOccurrences = exports.replaceCustomElementContent = exports.replaceTeaserImage = exports.replaceHeadlineContent = void 0;
+const eventHandlers_1 = require("./eventHandlers");
+/**
+ * Replace headline content by control identifier within paths.
+ *
+ * @param {string} controlIdentifier - The control identifier for the content to be replaced.
+ * @param {string} assignedIdentifier - The replacement content.
+ * @param {string[]} paths - The paths in which to look for elements to replace content.
+ *
+ * Iterates over the provided paths, finding elements where the control identifier is found,
+ * and replaces the content of these elements with the assigned identifier.
+ */
+function replaceHeadlineContent(campaignId, controlIdentifier, assignedIdentifier, assignedId, isControl, paths) {
+    console.log(`Start replacing headline content for control identifier "${controlIdentifier}" with paths ${paths}`);
+    let replaceCount = 0;
+    paths.forEach(path => {
+        const element = document.querySelector(path);
+        if (element && element.innerHTML) {
+            if (!isControl) {
+                console.log(`Element innerHTML before replace: "${element.innerHTML}"`);
+                const originalContent = element.innerHTML;
+                element.innerHTML = assignedIdentifier;
+                if (element.innerHTML !== originalContent) {
+                    replaceCount++;
+                    console.log(`Replaced content in element at path "${path}"`);
+                    console.log(`Element innerHTML after replace: "${element.innerHTML}"`);
+                }
+                else {
+                    console.log(`No replacement made for element at path "${path}"`);
+                }
+            }
+            // Reapply event handlers
+            (0, eventHandlers_1.addImpressionClickListener)(campaignId, path, assignedId, isControl);
+            // Make element visible again
+            element.style.display = '';
+        }
+    });
+    console.log(`Finished replacing headline content for control identifier "${controlIdentifier}". Total replacements: ${replaceCount}`);
+}
+exports.replaceHeadlineContent = replaceHeadlineContent;
+/**
+ * Replace the teaser image with the assigned identifier
+ * @param controlIdentifier - The control identifier
+ * @param assignedIdentifier - The assigned identifier
+ * @param paths - The paths to replace
+ */
+function replaceTeaserImage(campaignId, controlIdentifier, assignedIdentifier, assignedId, isControl, paths) {
+    console.log(`Start replacing teaser image for control identifier "${controlIdentifier}" with paths ${paths}`);
+    let replaceCount = 0;
+    paths.forEach(path => {
+        const element = document.querySelector(path);
+        if (element instanceof HTMLImageElement) {
+            console.log(`Element src before replace: "${element.src}"`);
+            const originalSrc = element.src;
+            // If isControl is true and element.src includes controlIdentifier, replace it
+            if (!isControl && element.src.includes(controlIdentifier)) {
+                element.src = assignedIdentifier;
+                if (element.src !== originalSrc) {
+                    replaceCount++;
+                    console.log(`Replaced image src at path "${path}"`);
+                    console.log(`Element src after replace: "${element.src}"`);
+                }
+                else {
+                    console.log(`No replacement made for element at path "${path}"`);
+                }
+            }
+            // Make element visible
+            element.style.display = '';
+            // Reapply event handlers
+            (0, eventHandlers_1.addImpressionClickListener)(campaignId, path, assignedId, isControl);
+        }
+    });
+    console.log(`Finished replacing teaser image for control identifier "${controlIdentifier}". Total replacements: ${replaceCount}`);
+}
+exports.replaceTeaserImage = replaceTeaserImage;
+/**
+ * Replace the content and attributes of custom elements in a class with given values.
+ *
+ * @param {string} className - A CSS selector to identify the root HTML element for traversal.
+ * @param {Campaign} campaign - The campaign data.
+ */
+function replaceCustomElementContent(className, campaign) {
+    //   const { controlIdentifier, assignedIdentifier, assignedId, isControl } = campaign;
+    //   // Find all occurrences of the control identifier
+    //   const occurrences = findOccurrences(className, controlIdentifier);
+    //   occurrences.forEach((path: string) => {
+    //     const element = document.querySelector(path);
+    //     if (!element) return;
+    //     // Replace the content or value of the element
+    //     if (element.textContent?.includes(controlIdentifier)) {
+    //       element.textContent = element.textContent.replace(controlIdentifier, assignedIdentifier);
+    //     }
+    //     if ((element as HTMLInputElement).value?.includes(controlIdentifier)) {
+    //       (element as HTMLInputElement).value = (element as HTMLInputElement).value.replace(controlIdentifier, assignedIdentifier);
+    //     }
+    //     if (element.getAttribute('src')?.includes(controlIdentifier)) {
+    //       element.setAttribute('src', element.getAttribute('src')?.replace(controlIdentifier, assignedIdentifier));
+    //     }
+    //     if (element.getAttribute('href')?.includes(controlIdentifier)) {
+    //       element.setAttribute('href', element.getAttribute('href')?.replace(controlIdentifier, assignedIdentifier));
+    //     }
+    //     // Add event listeners
+    //     addImpressionClickListener(campaign.campaignId, path, assignedId, isControl);
+    //   });
+}
+exports.replaceCustomElementContent = replaceCustomElementContent;
+/**
+* Traverse the DOM tree of an HTML element and find occurrences of a search term in text or attributes.
+* Ignores 'alt' attributes in 'img' elements and doesn't return duplicate CSS selector paths.
+* Only returns CSS selector paths leading to '<a>' elements where the search term was found.
+*
+* @param {string} selector - A CSS selector to identify the root HTML element for traversal.
+* @param {string} searchTerm - The term to search for within text nodes and attribute values.
+* @return {string[]} An array of CSS selector paths leading to '<a>' elements where the search term was found.
+*/
+function findOccurrences(selector, searchTerm) {
+    let rootElement = document.querySelector(selector);
+    if (!rootElement) {
+        console.error(`No element found for selector: ${selector}`);
+        return [];
+    }
+    let paths = [];
+    function traverseDOM(element, path) {
+        path = path ? `${path} > ${element.nodeName}:nth-child(${getIndex(element)})` : element.nodeName;
+        if (element.nodeName === "A") {
+            for (let attr of element.attributes) {
+                if (attr.value.includes(searchTerm) && !paths.includes(path)) {
+                    paths.push(path);
+                }
+            }
+            for (let node of element.childNodes) {
+                if (node.nodeType === 3 && node.nodeValue && node.nodeValue.includes(searchTerm) && !paths.includes(path)) {
+                    paths.push(path);
+                }
+            }
+        }
+        // If the element is an img, check its src attribute
+        if (element.nodeName === "IMG" && element instanceof HTMLImageElement && element.src.includes(searchTerm) && !paths.includes(path)) {
+            paths.push(path);
+        }
+        for (let child of element.children) {
+            traverseDOM(child, path);
+        }
+    }
+    function getIndex(node) {
+        let index = 1;
+        let previousNode = node.previousElementSibling;
+        while (previousNode) {
+            index++;
+            previousNode = previousNode.previousElementSibling;
+        }
+        return index;
+    }
+    traverseDOM(rootElement, '');
+    return paths || [];
+}
+exports.findOccurrences = findOccurrences;
+//# sourceMappingURL=contentReplacements.js.map

@@ -95,11 +95,11 @@ const CampaignResults: React.FC = () => {
           </TableHead>
           <TableBody>
             <TableRow>
-              <TableCell>{result.control.name}</TableCell>
-              <TableCell>{result.control.total_views}</TableCell>
-              <TableCell>{result.control.total_clicks}</TableCell>
-              <TableCell>{result.control.ctr.toPrecision(2)}%</TableCell>
-            </TableRow>
+              <TableCell>{result.control?.name || 'N/A'}</TableCell>
+              <TableCell>{result.control?.total_views || 'N/CA'}</TableCell>
+              <TableCell>{result.control?.total_clicks || 'N/A'}</TableCell>
+              <TableCell>{result.control?.ctr ? result.control.ctr.toPrecision(2): 'N/A'}%</TableCell>
+            </TableRow> 
           </TableBody>
         </Table>
         <Typography variant="h6">Variants:</Typography>
@@ -113,12 +113,12 @@ const CampaignResults: React.FC = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {result.variants.map((variant, index) => (
+            {Array.isArray(result.variants) && result.variants.map((variant, index) => (
               <TableRow key={index}>
-                <TableCell>{variant.name}</TableCell>
-                <TableCell>{variant.total_views}</TableCell>
-                <TableCell>{variant.total_clicks}</TableCell>
-                <TableCell>{variant.ctr.toPrecision(2)}%</TableCell>
+                <TableCell>{variant.name || 'N/A'}</TableCell>
+                <TableCell>{variant.total_views || 'N/A'}</TableCell>
+                <TableCell>{variant.total_clicks || 'N/A'}</TableCell>
+                <TableCell>{variant.ctr ? variant.ctr.toPrecision(2) : 'N/A'}%</TableCell>
               </TableRow>
             ))}
           </TableBody>
