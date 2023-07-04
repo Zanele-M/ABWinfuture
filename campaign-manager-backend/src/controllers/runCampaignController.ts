@@ -3,7 +3,7 @@ import { body, validationResult } from 'express-validator';
 import { assignVariantToUser } from '../utils/variantAssigner';
 import { getCampaignCookies } from '../utils/cookieManager';
 import { Database } from '../database/database';
-import { rollbar } from '../index'; // adjust the path according to your project structure
+import { rollbar } from '../../index'; // adjust the path according to your project structure
 
 
 // Validate and sanitize cookies

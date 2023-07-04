@@ -1,5 +1,5 @@
 import { ApiResponseData, CookieData } from "../types/CampaignCookies";
-import { addImpressionClickListener, checkBrowserSupport, findOccurrences, runCampaigns, handleApiResponse, sanitizeCookies } from "../utils";
+import { checkBrowserSupport, findOccurrences, runCampaigns, handleApiResponse, sanitizeCookies } from "../utils";
 
 const originalContent = new Map();
 

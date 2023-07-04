@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
-import CreateTest from './components/CreateTest/CreateTest';
 import logo from './assets/winlogo.png';
-import CampaignResults from './components/CampaignResults/CapaignResults';
+import CreateCampaign from './components/CreateCanpaign/CreateCampaign'; 
+import CampaignResults from './components/CampaignResults/CampaignResults';
 
 const App: React.FC = () => {
   const [currentTab, setCurrentTab] = useState('createTest');
@@ -33,10 +33,10 @@ const App: React.FC = () => {
       </nav>
 
       <div className="tab-content">
-        {currentTab === 'createTest' && <CreateTest setCurrentTab={setCurrentTab} />}
+        {currentTab === 'createTest' && <CreateCampaign setCurrentTab={setCurrentTab} />}
         {currentTab === 'testResult' && <CampaignResults />}
-        {currentTab === 'success' && <h2>Test created successfully!</h2>}
-        {currentTab === 'error' && <h2>Failed to create test</h2>}
+        {currentTab === 'success' && <h2>Campaign created successfully!</h2>}
+        {currentTab === 'error' && <h2>Failed to create campaign</h2>}
       </div>
     </div>
   );

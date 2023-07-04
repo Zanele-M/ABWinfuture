@@ -69,7 +69,7 @@ GET http://localhost:5008/v1/get_results
 
 
 ###
-POST http://localhost:3000/api/v1/runCampaigns
+POST http://localhost:3000/v1/run_campaigns
 Content-Type: application/json
 
 {

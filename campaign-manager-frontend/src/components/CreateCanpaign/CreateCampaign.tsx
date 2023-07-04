@@ -34,7 +34,7 @@ const LineInput = styled(TextField)({
   },
 });
 
-const CreateTest: React.FC<{ setCurrentTab: (tab: string) => void }> = (props) => {
+const CreateCampaign: React.FC<{ setCurrentTab: (tab: string) => void }> = (props) => {
   const { setCurrentTab } = props;
   const [campaignData, setCampaignData] = useState({
     campaign_name : '', 
@@ -222,4 +222,4 @@ const CreateTest: React.FC<{ setCurrentTab: (tab: string) => void }> = (props) =
   );
 };
 
-export default CreateTest;
+export default CreateCampaign;

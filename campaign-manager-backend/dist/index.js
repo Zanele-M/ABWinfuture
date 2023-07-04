@@ -5,14 +5,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.rollbar = void 0;
 const express_1 = __importDefault(require("express"));
-const runCampaignRouter_1 = __importDefault(require("./routes/runCampaignRouter"));
-const createCampaignRouter_1 = __importDefault(require("./routes/createCampaignRouter"));
+const runCampaignRouter_1 = __importDefault(require("./src/routes/runCampaignRouter"));
+const createCampaignRouter_1 = __importDefault(require("./src/routes/createCampaignRouter"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const cors_1 = __importDefault(require("cors"));
-const pauseCampaignRouter_1 = __importDefault(require("./routes/pauseCampaignRouter"));
+const pauseCampaignRouter_1 = __importDefault(require("./src/routes/pauseCampaignRouter"));
 const rollbar_1 = __importDefault(require("rollbar"));
-const resumeCampaignController_1 = require("./controllers/resumeCampaignController");
-const checkElementController_1 = __importDefault(require("./controllers/checkElementController"));
+const resumeCampaignRouter_1 = __importDefault(require("./src/routes/resumeCampaignRouter"));
 dotenv_1.default.config();
 const isProd = process.env.NODE_ENV === 'production';
 // Print the current environment
@@ -37,8 +36,8 @@ app.use(exports.rollbar.errorHandler());
 app.use(createCampaignRouter_1.default);
 app.use(runCampaignRouter_1.default);
 app.use(pauseCampaignRouter_1.default);
-app.use(resumeCampaignController_1.resumeCampaignController);
-app.use(checkElementController_1.default);
+app.use(resumeCampaignRouter_1.default);
+//app.use(checkElementRouter);
 // Define the port
 const port = 3000;
 // Start the server

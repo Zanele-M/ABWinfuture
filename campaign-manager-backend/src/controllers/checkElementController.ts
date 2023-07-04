@@ -1,6 +1,6 @@
 import axios from 'axios';
 import cheerio from 'cheerio';
-import { rollbar } from '../index'; // adjust the path according to your project structure
+import { rollbar } from '../../index'; // adjust the path according to your project structure
 import { Request, Response } from 'express';
 import { check, validationResult } from 'express-validator';
 
