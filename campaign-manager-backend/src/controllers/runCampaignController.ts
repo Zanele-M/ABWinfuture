@@ -3,7 +3,7 @@ import { body, validationResult } from 'express-validator';
 import { assignVariantToUser } from '../utils/variantAssigner';
 import { getCampaignCookies } from '../utils/cookieManager';
 import { Database } from '../database/database';
-import { rollbar } from '../../index'; // adjust the path according to your project structure
+import { rollbar } from '../index'; // adjust the path according to your project structure
 
 
 // Validate and sanitize cookies
@@ -86,9 +86,20 @@ export const runCampaignController = async (req: Request, res: Response, next: N
       }
     }
 
-    // Send the response with the updated campaign cookies
-    console.log('Sending response with campaign cookies:', campaignCookies);
-    res.status(200).json({ message: 'Cookies have been successfully updated', campaignCookies: campaignCookies });
+        // Send the response with the updated campaign cookies
+        console.log('Sending response with campaign cookies:', campaignCookies);
+    
+        // Create the response body
+        const responseBody = { 
+          message: 'Cookies have been successfully updated', 
+          campaignCookies: campaignCookies 
+        };
+    
+        // Log the response to Rollbar
+        rollbar.info('Sending response with campaign cookies:', responseBody);
+    
+        res.status(200).json(responseBody);
+    
 
   } catch (error) {
     const err = error as Error;

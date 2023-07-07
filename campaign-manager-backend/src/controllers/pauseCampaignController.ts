@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { body, validationResult, param } from 'express-validator';
 import { Database } from '../database/database';
-import { rollbar } from '../../index'; // adjust the path according to your project structure
+import { rollbar } from '../index'; // adjust the path according to your project structure
 
 /**
  * Middleware for validating and sanitizing the request payload for campaign pausing.

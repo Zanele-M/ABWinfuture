@@ -1,7 +1,7 @@
 import { Pool, PoolConfig } from "pg";
 import { Campaign, Variants, Controls} from "../types";
 import { Aggregates } from "../utils/types";
-import { rollbar } from "../../index";
+import { rollbar } from "../index";
 export class Database {
   private pool: Pool;
 

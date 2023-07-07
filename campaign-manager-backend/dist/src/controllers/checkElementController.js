@@ -14,7 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.checkElementExistence = exports.validateCheckElementExistence = void 0;
 const axios_1 = __importDefault(require("axios"));
-const cheerio_1 = __importDefault(require("cheerio"));
+const jsdom_1 = require("jsdom");
 const index_1 = require("../../index"); // adjust the path according to your project structure
 const express_validator_1 = require("express-validator");
 /**
@@ -36,21 +36,23 @@ exports.validateCheckElementExistence = [
  * Function to check if an element exists on the webpage.
  */
 const checkElementExistence = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { identifier, type } = req.params; // use req.params instead of req.body
-    const url = req.query.url; // use req.query for url
+    const type = req.params.type;
+    const identifier = req.params.identifier;
+    const url = "https://winfuture.de/"; // use req.query for url
     // check if the required params and query are provided
     if (!identifier || !type || !url) {
         return res.status(400).json({ error: 'Missing required parameters or query.' });
     }
     try {
-        const { data } = yield axios_1.default.get(url);
-        const $ = cheerio_1.default.load(data);
+        const response = yield axios_1.default.get(url);
+        const dom = new jsdom_1.JSDOM(response.data);
+        const document = dom.window.document;
         let elementExists = false;
         if (type === 'headline') {
-            elementExists = $('a').toArray().some(el => $(el).text().includes(identifier));
+            elementExists = Array.from(document.querySelectorAll('a')).some(el => el.textContent && el.textContent.includes(identifier));
         }
         else if (type === 'image') {
-            const imgSources = $('img').map((i, img) => $(img).attr('src')).get();
+            const imgSources = Array.from(document.querySelectorAll('img')).map(img => img.getAttribute('src'));
             elementExists = imgSources.includes(identifier);
         }
         res.status(200).json({ elementExists });

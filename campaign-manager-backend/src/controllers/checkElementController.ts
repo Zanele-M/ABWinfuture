@@ -1,6 +1,6 @@
 import axios from 'axios';
-import cheerio from 'cheerio';
-import { rollbar } from '../../index'; // adjust the path according to your project structure
+import { JSDOM } from 'jsdom';
+import { rollbar } from '../index'; // adjust the path according to your project structure
 import { Request, Response } from 'express';
 import { check, validationResult } from 'express-validator';
 
@@ -24,8 +24,9 @@ export const validateCheckElementExistence = [
  * Function to check if an element exists on the webpage.
  */
 export const checkElementExistence = async (req: Request, res: Response) => {
-    const { identifier, type } = req.params; // use req.params instead of req.body
-    const url = req.query.url as string; // use req.query for url
+    const type = req.params.type;
+    const identifier = req.params.identifier;
+    const url = "https://winfuture.de/"; // use req.query for url
 
     // check if the required params and query are provided
     if (!identifier || !type || !url) {
@@ -33,14 +34,16 @@ export const checkElementExistence = async (req: Request, res: Response) => {
     }
 
     try {
-        const { data } = await axios.get(url);
-        const $ = cheerio.load(data);
+        const response = await axios.get(url);
+        const dom = new JSDOM(response.data);
+        const document = dom.window.document;
         let elementExists = false;
 
         if (type === 'headline') {
-            elementExists = $('a').toArray().some(el => $(el).text().includes(identifier));
-        } else if (type === 'image') {
-            const imgSources = $('img').map((i, img) => $(img).attr('src')).get();
+            elementExists = Array.from(document.querySelectorAll('a')).some(el => el.textContent && el.textContent.includes(identifier));
+        }
+         else if (type === 'image') {
+            const imgSources = Array.from(document.querySelectorAll('img')).map(img => img.getAttribute('src'));
             elementExists = imgSources.includes(identifier);
         }
 

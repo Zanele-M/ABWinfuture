@@ -8,6 +8,6 @@ const resumeCampaignController_1 = require("../controllers/resumeCampaignControl
 // Create a new router
 const router = express_1.default.Router();
 // Define the route for creating a campaign
-router.put('v1/campaigns/:campaign_id/resume', resumeCampaignController_1.resumeCampaignController);
+router.put('/v1/campaigns/:campaign_id/resume', resumeCampaignController_1.resumeCampaignController);
 // Export the router
 exports.default = router;

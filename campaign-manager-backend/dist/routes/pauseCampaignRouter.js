@@ -8,6 +8,6 @@ const pauseCampaignController_1 = require("../controllers/pauseCampaignControlle
 // Create a new router
 const router = express_1.default.Router();
 // Define the route for creating a campaign
-router.put('v1/campaigns/:campaign_id/pause', pauseCampaignController_1.pauseCampaignController);
+router.put('/v1/campaigns/:campaign_id/pause', pauseCampaignController_1.pauseCampaignController);
 // Export the router
 exports.default = router;

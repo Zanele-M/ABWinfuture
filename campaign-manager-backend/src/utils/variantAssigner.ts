@@ -1,7 +1,7 @@
 import { Campaign, CampaignCookie, Variants, Controls } from "../types";
 import { Aggregates } from "./types";
 import { Database } from "../database/database";
-import { rollbar } from '../../index'; // adjust the path according to your project structure
+import { rollbar } from '../index'; // adjust the path according to your project structure
 
 
 function assignRandomVariant(campaign: Campaign, control: Controls, variants: Variants[]): CampaignCookie {
