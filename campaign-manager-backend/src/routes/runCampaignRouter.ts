@@ -7,7 +7,7 @@ import { runCampaignController, validateCookies } from '../controllers/runCampai
 const campaignRouter = express.Router();
 
 // Define the route for creating a campaign
-campaignRouter.post('/v1/run_campaigns', validateCookies,  runCampaignController);
+campaignRouter.post('/run_campaigns', validateCookies,  runCampaignController);
 
 // Export the router
 export default campaignRouter;

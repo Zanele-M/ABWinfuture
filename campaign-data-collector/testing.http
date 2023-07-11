@@ -82,11 +82,7 @@ PUT http://localhost:3000/campaigns/70/pause
 
 ###
 
-PUT http://localhost:3000/campaigns/70/resume
-
-
-
-
+PUT http://localhost:3000/pause/70
 
 ###
 POST http://localhost:3000/check_element
