@@ -13,7 +13,7 @@ async function hideElements(cookies: string): Promise<void> {
       console.warn('No control paths found for cookie: ', cookie);
       return;
     }
-    
+
     controlPaths.forEach((path: string) => {
       const element = document.querySelector(path) as HTMLElement;
       if (element) {
@@ -58,10 +58,15 @@ export async function runCampaign() {
 
   try {
     const cookies = document.cookie;
-    
+
     if (cookies) {
       console.warn('Found cookies');
-      await hideElements(cookies);
+      const filteredCookies = cookies.split(';')
+        .map(cookie => cookie.trim())
+        .filter(cookie => cookie.startsWith('campaign_'))
+        .join(';');
+
+      await hideElements(filteredCookies);
     } else {
       console.warn('No cookies found');
     }
@@ -85,8 +90,7 @@ export async function runCampaign() {
       } else {
         throw new Error('API response error: missing campaignCookies');
       }
-    } 
-     catch (apiError) {
+    } catch (apiError) {
       console.error('API call failed: ', apiError);
       await restoreOriginalContent();
     }
