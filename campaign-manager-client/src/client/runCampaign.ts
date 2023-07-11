@@ -81,6 +81,7 @@ export async function runCampaign() {
       if (isApiResponseData(response)) {
         console.log(JSON.stringify(response));  // Log campaignCookies
         handleApiResponse(response, originalContent);
+        console.log('Campaign execution completed successfully!'); // Log success message here
       } else {
         throw new Error('API response error: missing campaignCookies');
       }
@@ -89,7 +90,6 @@ export async function runCampaign() {
       console.error('API call failed: ', apiError);
       await restoreOriginalContent();
     }
-    console.log('Campaign execution completed successfully!');
   } catch (error) {
     console.error('Error executing campaign: ', error);
   }
