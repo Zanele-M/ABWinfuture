@@ -29,7 +29,7 @@ export function sendInteractionEvent(data: any, key: string): void {
   }
 
 export async function runCampaigns(cookies: string) {
-  const response = await fetch('https://abtest.winfuture.mobi/backend/v1/run_campaigns', {
+  const response = await fetch('https://abtest.winfuture.mobi/backend/run_campaigns', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
