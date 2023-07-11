@@ -30,7 +30,7 @@ const ABTestService = {
   async createCampaign(campaignData: CampaignData): Promise<void> {
     try {
       console.log(`Creating campaign: ${campaignData.campaign_name}`);
-      const response = await fetch(`https://abtest.winfuture.mobi/create_campaign`, {
+      const response = await fetch(`https://abtest.winfuture.mobi/backend/create_campaign`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
