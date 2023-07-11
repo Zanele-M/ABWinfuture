@@ -21,7 +21,7 @@ const express_validator_1 = require("express-validator");
  * Middleware function to validate and sanitize the request payload for the checkElementExistence function.
  */
 exports.validateCheckElementExistence = [
-    (0, express_validator_1.check)('controlIdentifier').exists().isString().trim().escape(),
+    (0, express_validator_1.check)('identifier').exists().isString().trim().escape(),
     (0, express_validator_1.check)('type').exists().isIn(['headline', 'image']),
     (0, express_validator_1.check)('url').exists().isURL(),
     (req, res, next) => {
@@ -36,13 +36,14 @@ exports.validateCheckElementExistence = [
  * Function to check if an element exists on the webpage.
  */
 const checkElementExistence = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const type = req.params.type;
-    const identifier = req.params.identifier;
-    const url = "https://winfuture.de/"; // use req.query for url
+    const type = req.body.type;
+    const identifier = req.body.identifier;
+    const url = req.body.url;
     // check if the required params and query are provided
     if (!identifier || !type || !url) {
         return res.status(400).json({ error: 'Missing required parameters or query.' });
     }
+    console.log(identifier);
     try {
         const response = yield axios_1.default.get(url);
         const dom = new jsdom_1.JSDOM(response.data);

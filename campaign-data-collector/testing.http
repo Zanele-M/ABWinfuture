@@ -85,9 +85,16 @@ PUT http://localhost:3000/campaigns/70/pause
 PUT http://localhost:3000/campaigns/70/resume
 
 
-###
-GET http://localhost:3000/v1/"https://winfuture.de/"/"headline"/"Sonnensturm auf dem Weg zur Erde - Beeinträchtigungen zu erwarten"/check_element
 
 
+
 ###
-GET http://localhost:3000/check_element/headline/"Sonnensturm%20auf%20dem%20Weg%20zur%20Erde%20-%20Beeintr%C3%A4chtigungen%20zu%20erwarten"
+POST http://localhost:3000/check_element
+Content-Type: application/json
+
+{
+  "type": "headline",
+  "identifier": "Betrug: Tausende Balkonkraftwerke bald ohne Zulassung? (Update)",
+  "url": "https://winfuture.de/"
+}
+

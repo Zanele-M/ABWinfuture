@@ -86,7 +86,14 @@ const runCampaignController = (req, res, next) => __awaiter(void 0, void 0, void
         }
         // Send the response with the updated campaign cookies
         console.log('Sending response with campaign cookies:', campaignCookies);
-        res.status(200).json({ message: 'Cookies have been successfully updated', campaignCookies: campaignCookies });
+        // Create the response body
+        const responseBody = {
+            message: 'Cookies have been successfully updated',
+            campaignCookies: campaignCookies
+        };
+        // Log the response to Rollbar
+        index_1.rollbar.info('Sending response with campaign cookies:', responseBody);
+        res.status(200).json(responseBody);
     }
     catch (error) {
         const err = error;

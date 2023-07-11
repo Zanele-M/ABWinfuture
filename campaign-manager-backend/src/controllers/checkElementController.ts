@@ -8,7 +8,7 @@ import { check, validationResult } from 'express-validator';
  * Middleware function to validate and sanitize the request payload for the checkElementExistence function.
  */
 export const validateCheckElementExistence = [
-    check('controlIdentifier').exists().isString().trim().escape(),
+    check('identifier').exists().isString().trim().escape(),
     check('type').exists().isIn(['headline', 'image']),
     check('url').exists().isURL(),
     (req: Request, res: Response, next: () => void) => {
@@ -24,15 +24,16 @@ export const validateCheckElementExistence = [
  * Function to check if an element exists on the webpage.
  */
 export const checkElementExistence = async (req: Request, res: Response) => {
-    const type = req.params.type;
-    const identifier = req.params.identifier;
-    const url = "https://winfuture.de/"; // use req.query for url
+    const type = req.body.type;
+    const identifier = req.body.identifier;
+    const url = req.body.url;
 
     // check if the required params and query are provided
     if (!identifier || !type || !url) {
         return res.status(400).json({ error: 'Missing required parameters or query.' });
     }
 
+    console.log(identifier)
     try {
         const response = await axios.get(url);
         const dom = new JSDOM(response.data);
