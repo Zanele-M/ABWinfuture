@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import logo from './assets/winlogo.png';
-import CreateCampaign from './components/CreateCanpaign/CreateCampaign'; 
+import CreateCampaign from './components/CreateCampaign/CreateCampaign'; 
 import CampaignResults from './components/CampaignResults/CampaignResults';
 
 const App: React.FC = () => {

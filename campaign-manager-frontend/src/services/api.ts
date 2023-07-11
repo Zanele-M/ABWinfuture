@@ -97,7 +97,7 @@ const ABTestService = {
  * @returns {Promise<boolean>} A promise that resolves to a boolean indicating whether the element exists.
  */
   async checkElementExistence(identifier: string, type: string): Promise<boolean> {
-    const url = 'https://winfuture.de/'
+    const url = 'https://winfuture:betatest@dev7.winfuture.de:49443'
     try {
       const response = await fetch('https://abtest.winfuture.mobi/backend/check_element', {
         method: 'POST',
