@@ -22,6 +22,12 @@ export const rollbar = new Rollbar({
   captureUnhandledRejections: true,
 });
 
+console.log("Rollbar Config", isProd ? process.env.ROLLBAR_TOKEN_PROD : process.env.ROLLBAR_TOKEN_DEV)
+console.log("Database", isProd ? process.env.DB_PASSWORD_DEV : process.env.DB_PASSWORD_DEV)
+console.log("User", isProd ? process.env.DB_USER_DEV : process.env.DB_USER_DEV)
+
+
+
 const app = express();
 
 // Add CORS middleware with custom options
