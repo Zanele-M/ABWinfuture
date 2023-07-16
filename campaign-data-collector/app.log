@@ -138,3 +138,650 @@ INFO:werkzeug:127.0.0.1 - - [28/Jun/2023 09:29:18] "[33mGET / HTTP/1.1[0m" 404
 INFO:werkzeug:127.0.0.1 - - [28/Jun/2023 09:43:29] "[33mGET / HTTP/1.1[0m" 404 -
 INFO:werkzeug:127.0.0.1 - - [28/Jun/2023 09:44:23] "[33mGET / HTTP/1.1[0m" 404 -
 ERROR:app.views:Input sanitization error: Invalid type or value for field 'interaction_type'
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+ERROR:app.utils.interaction_data:Error occurred during bulk insert: (psycopg2.errors.UndefinedTable) relation "interactions" does not exist
+LINE 1: INSERT INTO interactions (id, assigned_id, is_control, inter...
+                    ^
+
+[SQL: INSERT INTO interactions (id, assigned_id, is_control, interaction_type, interaction_time) VALUES (%(id__0)s, %(assigned_id__0)s, %(is_control__0)s, %(interaction_type__0)s, %(interaction_time__0)s), (%(id__1)s, %(assigned_id__1)s, %(is_control__1)s, ... 1836 characters truncated ... __19)s, %(assigned_id__19)s, %(is_control__19)s, %(interaction_type__19)s, %(interaction_time__19)s)]
+[parameters: {'assigned_id__0': 12, 'id__0': 377754947, 'is_control__0': False, 'interaction_time__0': datetime.datetime(2023, 7, 16, 14, 21, 11, 65297), 'interaction_type__0': 'views', 'assigned_id__1': 12, 'id__1': 218927224, 'is_control__1': False, 'interaction_time__1': datetime.datetime(2023, 7, 16, 14, 21, 11, 65301), 'interaction_type__1': 'views', 'assigned_id__2': 12, 'id__2': 867414579, 'is_control__2': False, 'interaction_time__2': datetime.datetime(2023, 7, 16, 14, 21, 11, 65302), 'interaction_type__2': 'views', 'assigned_id__3': 12, 'id__3': 338805363, 'is_control__3': False, 'interaction_time__3': datetime.datetime(2023, 7, 16, 14, 21, 11, 65303), 'interaction_type__3': 'views', 'assigned_id__4': 12, 'id__4': 555133205, 'is_control__4': False, 'interaction_time__4': datetime.datetime(2023, 7, 16, 14, 21, 11, 65303), 'interaction_type__4': 'views', 'assigned_id__5': 12, 'id__5': 180754049, 'is_control__5': False, 'interaction_time__5': datetime.datetime(2023, 7, 16, 14, 21, 11, 65304), 'interaction_type__5': 'views', 'assigned_id__6': 12, 'id__6': 390472843, 'is_control__6': False, 'interaction_time__6': datetime.datetime(2023, 7, 16, 14, 21, 11, 65310), 'interaction_type__6': 'views', 'assigned_id__7': 12, 'id__7': 445521297, 'is_control__7': False, 'interaction_time__7': datetime.datetime(2023, 7, 16, 14, 21, 11, 65311), 'interaction_type__7': 'views', 'assigned_id__8': 12, 'id__8': 845063514, 'is_control__8': False, 'interaction_time__8': datetime.datetime(2023, 7, 16, 14, 21, 11, 65311), 'interaction_type__8': 'views', 'assigned_id__9': 12, 'id__9': 753484574, 'is_control__9': False, 'interaction_time__9': datetime.datetime(2023, 7, 16, 14, 21, 11, 65312), 'interaction_type__9': 'views', 'assigned_id__10': 12, 'id__10': 515296585, 'is_control__10': False, 'interaction_time__10': datetime.datetime(2023, 7, 16, 14, 21, 11, 65312), 'interaction_type__10': 'views', 'assigned_id__11': 12, 'id__11': 613034987, 'is_control__11': False, 'interaction_time__11': datetime.datetime(2023, 7, 16, 14, 21, 11, 65313), 'interaction_type__11': 'views', 'assigned_id__12': 12, 'id__12': 704153200, 'is_control__12': False, 'interaction_time__12': datetime.datetime(2023, 7, 16, 14, 21, 11, 65314), 'interaction_type__12': 'views', 'assigned_id__13': 12, 'id__13': 875844315, 'is_control__13': False, 'interaction_time__13': datetime.datetime(2023, 7, 16, 14, 21, 11, 65314), 'interaction_type__13': 'views', 'assigned_id__14': 12, 'id__14': 220114959, 'is_control__14': False, 'interaction_time__14': datetime.datetime(2023, 7, 16, 14, 21, 11, 65315), 'interaction_type__14': 'views', 'assigned_id__15': 12, 'id__15': 189233315, 'is_control__15': False, 'interaction_time__15': datetime.datetime(2023, 7, 16, 14, 21, 11, 65316), 'interaction_type__15': 'views', 'assigned_id__16': 12, 'id__16': 348756096, 'is_control__16': False, 'interaction_time__16': datetime.datetime(2023, 7, 16, 14, 21, 11, 65317), 'interaction_type__16': 'views', 'assigned_id__17': 12, 'id__17': 314522416, 'is_control__17': False, 'interaction_time__17': datetime.datetime(2023, 7, 16, 14, 21, 11, 65318), 'interaction_type__17': 'views', 'assigned_id__18': 12, 'id__18': 878873300, 'is_control__18': False, 'interaction_time__18': datetime.datetime(2023, 7, 16, 14, 21, 11, 65318), 'interaction_type__18': 'views', 'assigned_id__19': 12, 'id__19': 173082363, 'is_control__19': False, 'interaction_time__19': datetime.datetime(2023, 7, 16, 14, 21, 11, 65319), 'interaction_type__19': 'views'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+ERROR:app.views:Error occurred during user interaction creation: (psycopg2.errors.UndefinedTable) relation "interactions" does not exist
+LINE 1: INSERT INTO interactions (id, assigned_id, is_control, inter...
+                    ^
+
+[SQL: INSERT INTO interactions (id, assigned_id, is_control, interaction_type, interaction_time) VALUES (%(id__0)s, %(assigned_id__0)s, %(is_control__0)s, %(interaction_type__0)s, %(interaction_time__0)s), (%(id__1)s, %(assigned_id__1)s, %(is_control__1)s, ... 1836 characters truncated ... __19)s, %(assigned_id__19)s, %(is_control__19)s, %(interaction_type__19)s, %(interaction_time__19)s)]
+[parameters: {'assigned_id__0': 12, 'id__0': 377754947, 'is_control__0': False, 'interaction_time__0': datetime.datetime(2023, 7, 16, 14, 21, 11, 65297), 'interaction_type__0': 'views', 'assigned_id__1': 12, 'id__1': 218927224, 'is_control__1': False, 'interaction_time__1': datetime.datetime(2023, 7, 16, 14, 21, 11, 65301), 'interaction_type__1': 'views', 'assigned_id__2': 12, 'id__2': 867414579, 'is_control__2': False, 'interaction_time__2': datetime.datetime(2023, 7, 16, 14, 21, 11, 65302), 'interaction_type__2': 'views', 'assigned_id__3': 12, 'id__3': 338805363, 'is_control__3': False, 'interaction_time__3': datetime.datetime(2023, 7, 16, 14, 21, 11, 65303), 'interaction_type__3': 'views', 'assigned_id__4': 12, 'id__4': 555133205, 'is_control__4': False, 'interaction_time__4': datetime.datetime(2023, 7, 16, 14, 21, 11, 65303), 'interaction_type__4': 'views', 'assigned_id__5': 12, 'id__5': 180754049, 'is_control__5': False, 'interaction_time__5': datetime.datetime(2023, 7, 16, 14, 21, 11, 65304), 'interaction_type__5': 'views', 'assigned_id__6': 12, 'id__6': 390472843, 'is_control__6': False, 'interaction_time__6': datetime.datetime(2023, 7, 16, 14, 21, 11, 65310), 'interaction_type__6': 'views', 'assigned_id__7': 12, 'id__7': 445521297, 'is_control__7': False, 'interaction_time__7': datetime.datetime(2023, 7, 16, 14, 21, 11, 65311), 'interaction_type__7': 'views', 'assigned_id__8': 12, 'id__8': 845063514, 'is_control__8': False, 'interaction_time__8': datetime.datetime(2023, 7, 16, 14, 21, 11, 65311), 'interaction_type__8': 'views', 'assigned_id__9': 12, 'id__9': 753484574, 'is_control__9': False, 'interaction_time__9': datetime.datetime(2023, 7, 16, 14, 21, 11, 65312), 'interaction_type__9': 'views', 'assigned_id__10': 12, 'id__10': 515296585, 'is_control__10': False, 'interaction_time__10': datetime.datetime(2023, 7, 16, 14, 21, 11, 65312), 'interaction_type__10': 'views', 'assigned_id__11': 12, 'id__11': 613034987, 'is_control__11': False, 'interaction_time__11': datetime.datetime(2023, 7, 16, 14, 21, 11, 65313), 'interaction_type__11': 'views', 'assigned_id__12': 12, 'id__12': 704153200, 'is_control__12': False, 'interaction_time__12': datetime.datetime(2023, 7, 16, 14, 21, 11, 65314), 'interaction_type__12': 'views', 'assigned_id__13': 12, 'id__13': 875844315, 'is_control__13': False, 'interaction_time__13': datetime.datetime(2023, 7, 16, 14, 21, 11, 65314), 'interaction_type__13': 'views', 'assigned_id__14': 12, 'id__14': 220114959, 'is_control__14': False, 'interaction_time__14': datetime.datetime(2023, 7, 16, 14, 21, 11, 65315), 'interaction_type__14': 'views', 'assigned_id__15': 12, 'id__15': 189233315, 'is_control__15': False, 'interaction_time__15': datetime.datetime(2023, 7, 16, 14, 21, 11, 65316), 'interaction_type__15': 'views', 'assigned_id__16': 12, 'id__16': 348756096, 'is_control__16': False, 'interaction_time__16': datetime.datetime(2023, 7, 16, 14, 21, 11, 65317), 'interaction_type__16': 'views', 'assigned_id__17': 12, 'id__17': 314522416, 'is_control__17': False, 'interaction_time__17': datetime.datetime(2023, 7, 16, 14, 21, 11, 65318), 'interaction_type__17': 'views', 'assigned_id__18': 12, 'id__18': 878873300, 'is_control__18': False, 'interaction_time__18': datetime.datetime(2023, 7, 16, 14, 21, 11, 65318), 'interaction_type__18': 'views', 'assigned_id__19': 12, 'id__19': 173082363, 'is_control__19': False, 'interaction_time__19': datetime.datetime(2023, 7, 16, 14, 21, 11, 65319), 'interaction_type__19': 'views'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+ERROR:app.utils.interaction_data:Error occurred during bulk insert: (psycopg2.errors.UndefinedTable) relation "interactions" does not exist
+LINE 1: INSERT INTO interactions (id, assigned_id, is_control, inter...
+                    ^
+
+[SQL: INSERT INTO interactions (id, assigned_id, is_control, interaction_type, interaction_time) VALUES (%(id__0)s, %(assigned_id__0)s, %(is_control__0)s, %(interaction_type__0)s, %(interaction_time__0)s), (%(id__1)s, %(assigned_id__1)s, %(is_control__1)s, ... 1836 characters truncated ... __19)s, %(assigned_id__19)s, %(is_control__19)s, %(interaction_type__19)s, %(interaction_time__19)s)]
+[parameters: {'assigned_id__0': 12, 'id__0': 195640731, 'is_control__0': False, 'interaction_time__0': datetime.datetime(2023, 7, 16, 14, 21, 11, 741175), 'interaction_type__0': 'views', 'assigned_id__1': 12, 'id__1': 856307123, 'is_control__1': False, 'interaction_time__1': datetime.datetime(2023, 7, 16, 14, 21, 11, 741179), 'interaction_type__1': 'views', 'assigned_id__2': 12, 'id__2': 358637588, 'is_control__2': False, 'interaction_time__2': datetime.datetime(2023, 7, 16, 14, 21, 11, 741180), 'interaction_type__2': 'views', 'assigned_id__3': 12, 'id__3': 980695957, 'is_control__3': False, 'interaction_time__3': datetime.datetime(2023, 7, 16, 14, 21, 11, 741181), 'interaction_type__3': 'views', 'assigned_id__4': 12, 'id__4': 144075249, 'is_control__4': False, 'interaction_time__4': datetime.datetime(2023, 7, 16, 14, 21, 11, 741181), 'interaction_type__4': 'views', 'assigned_id__5': 12, 'id__5': 862802023, 'is_control__5': False, 'interaction_time__5': datetime.datetime(2023, 7, 16, 14, 21, 11, 741182), 'interaction_type__5': 'views', 'assigned_id__6': 12, 'id__6': 717336276, 'is_control__6': False, 'interaction_time__6': datetime.datetime(2023, 7, 16, 14, 21, 11, 741182), 'interaction_type__6': 'views', 'assigned_id__7': 12, 'id__7': 225143634, 'is_control__7': False, 'interaction_time__7': datetime.datetime(2023, 7, 16, 14, 21, 11, 741183), 'interaction_type__7': 'views', 'assigned_id__8': 12, 'id__8': 561414696, 'is_control__8': False, 'interaction_time__8': datetime.datetime(2023, 7, 16, 14, 21, 11, 741184), 'interaction_type__8': 'views', 'assigned_id__9': 12, 'id__9': 124394381, 'is_control__9': False, 'interaction_time__9': datetime.datetime(2023, 7, 16, 14, 21, 11, 741184), 'interaction_type__9': 'views', 'assigned_id__10': 12, 'id__10': 79873386, 'is_control__10': False, 'interaction_time__10': datetime.datetime(2023, 7, 16, 14, 21, 11, 741185), 'interaction_type__10': 'views', 'assigned_id__11': 12, 'id__11': 590653271, 'is_control__11': False, 'interaction_time__11': datetime.datetime(2023, 7, 16, 14, 21, 11, 741185), 'interaction_type__11': 'views', 'assigned_id__12': 12, 'id__12': 881001019, 'is_control__12': False, 'interaction_time__12': datetime.datetime(2023, 7, 16, 14, 21, 11, 741186), 'interaction_type__12': 'views', 'assigned_id__13': 12, 'id__13': 115401065, 'is_control__13': False, 'interaction_time__13': datetime.datetime(2023, 7, 16, 14, 21, 11, 741187), 'interaction_type__13': 'views', 'assigned_id__14': 12, 'id__14': 410561861, 'is_control__14': False, 'interaction_time__14': datetime.datetime(2023, 7, 16, 14, 21, 11, 741187), 'interaction_type__14': 'views', 'assigned_id__15': 12, 'id__15': 549324297, 'is_control__15': False, 'interaction_time__15': datetime.datetime(2023, 7, 16, 14, 21, 11, 741188), 'interaction_type__15': 'views', 'assigned_id__16': 12, 'id__16': 734996997, 'is_control__16': False, 'interaction_time__16': datetime.datetime(2023, 7, 16, 14, 21, 11, 741188), 'interaction_type__16': 'views', 'assigned_id__17': 12, 'id__17': 454712722, 'is_control__17': False, 'interaction_time__17': datetime.datetime(2023, 7, 16, 14, 21, 11, 741189), 'interaction_type__17': 'views', 'assigned_id__18': 12, 'id__18': 971342286, 'is_control__18': False, 'interaction_time__18': datetime.datetime(2023, 7, 16, 14, 21, 11, 741190), 'interaction_type__18': 'views', 'assigned_id__19': 12, 'id__19': 437962563, 'is_control__19': False, 'interaction_time__19': datetime.datetime(2023, 7, 16, 14, 21, 11, 741190), 'interaction_type__19': 'views'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+ERROR:app.views:Error occurred during user interaction creation: (psycopg2.errors.UndefinedTable) relation "interactions" does not exist
+LINE 1: INSERT INTO interactions (id, assigned_id, is_control, inter...
+                    ^
+
+[SQL: INSERT INTO interactions (id, assigned_id, is_control, interaction_type, interaction_time) VALUES (%(id__0)s, %(assigned_id__0)s, %(is_control__0)s, %(interaction_type__0)s, %(interaction_time__0)s), (%(id__1)s, %(assigned_id__1)s, %(is_control__1)s, ... 1836 characters truncated ... __19)s, %(assigned_id__19)s, %(is_control__19)s, %(interaction_type__19)s, %(interaction_time__19)s)]
+[parameters: {'assigned_id__0': 12, 'id__0': 195640731, 'is_control__0': False, 'interaction_time__0': datetime.datetime(2023, 7, 16, 14, 21, 11, 741175), 'interaction_type__0': 'views', 'assigned_id__1': 12, 'id__1': 856307123, 'is_control__1': False, 'interaction_time__1': datetime.datetime(2023, 7, 16, 14, 21, 11, 741179), 'interaction_type__1': 'views', 'assigned_id__2': 12, 'id__2': 358637588, 'is_control__2': False, 'interaction_time__2': datetime.datetime(2023, 7, 16, 14, 21, 11, 741180), 'interaction_type__2': 'views', 'assigned_id__3': 12, 'id__3': 980695957, 'is_control__3': False, 'interaction_time__3': datetime.datetime(2023, 7, 16, 14, 21, 11, 741181), 'interaction_type__3': 'views', 'assigned_id__4': 12, 'id__4': 144075249, 'is_control__4': False, 'interaction_time__4': datetime.datetime(2023, 7, 16, 14, 21, 11, 741181), 'interaction_type__4': 'views', 'assigned_id__5': 12, 'id__5': 862802023, 'is_control__5': False, 'interaction_time__5': datetime.datetime(2023, 7, 16, 14, 21, 11, 741182), 'interaction_type__5': 'views', 'assigned_id__6': 12, 'id__6': 717336276, 'is_control__6': False, 'interaction_time__6': datetime.datetime(2023, 7, 16, 14, 21, 11, 741182), 'interaction_type__6': 'views', 'assigned_id__7': 12, 'id__7': 225143634, 'is_control__7': False, 'interaction_time__7': datetime.datetime(2023, 7, 16, 14, 21, 11, 741183), 'interaction_type__7': 'views', 'assigned_id__8': 12, 'id__8': 561414696, 'is_control__8': False, 'interaction_time__8': datetime.datetime(2023, 7, 16, 14, 21, 11, 741184), 'interaction_type__8': 'views', 'assigned_id__9': 12, 'id__9': 124394381, 'is_control__9': False, 'interaction_time__9': datetime.datetime(2023, 7, 16, 14, 21, 11, 741184), 'interaction_type__9': 'views', 'assigned_id__10': 12, 'id__10': 79873386, 'is_control__10': False, 'interaction_time__10': datetime.datetime(2023, 7, 16, 14, 21, 11, 741185), 'interaction_type__10': 'views', 'assigned_id__11': 12, 'id__11': 590653271, 'is_control__11': False, 'interaction_time__11': datetime.datetime(2023, 7, 16, 14, 21, 11, 741185), 'interaction_type__11': 'views', 'assigned_id__12': 12, 'id__12': 881001019, 'is_control__12': False, 'interaction_time__12': datetime.datetime(2023, 7, 16, 14, 21, 11, 741186), 'interaction_type__12': 'views', 'assigned_id__13': 12, 'id__13': 115401065, 'is_control__13': False, 'interaction_time__13': datetime.datetime(2023, 7, 16, 14, 21, 11, 741187), 'interaction_type__13': 'views', 'assigned_id__14': 12, 'id__14': 410561861, 'is_control__14': False, 'interaction_time__14': datetime.datetime(2023, 7, 16, 14, 21, 11, 741187), 'interaction_type__14': 'views', 'assigned_id__15': 12, 'id__15': 549324297, 'is_control__15': False, 'interaction_time__15': datetime.datetime(2023, 7, 16, 14, 21, 11, 741188), 'interaction_type__15': 'views', 'assigned_id__16': 12, 'id__16': 734996997, 'is_control__16': False, 'interaction_time__16': datetime.datetime(2023, 7, 16, 14, 21, 11, 741188), 'interaction_type__16': 'views', 'assigned_id__17': 12, 'id__17': 454712722, 'is_control__17': False, 'interaction_time__17': datetime.datetime(2023, 7, 16, 14, 21, 11, 741189), 'interaction_type__17': 'views', 'assigned_id__18': 12, 'id__18': 971342286, 'is_control__18': False, 'interaction_time__18': datetime.datetime(2023, 7, 16, 14, 21, 11, 741190), 'interaction_type__18': 'views', 'assigned_id__19': 12, 'id__19': 437962563, 'is_control__19': False, 'interaction_time__19': datetime.datetime(2023, 7, 16, 14, 21, 11, 741190), 'interaction_type__19': 'views'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+ERROR:app.utils.interaction_data:Error occurred during bulk insert: (psycopg2.errors.UndefinedTable) relation "interactions" does not exist
+LINE 1: INSERT INTO interactions (id, assigned_id, is_control, inter...
+                    ^
+
+[SQL: INSERT INTO interactions (id, assigned_id, is_control, interaction_type, interaction_time) VALUES (%(id__0)s, %(assigned_id__0)s, %(is_control__0)s, %(interaction_type__0)s, %(interaction_time__0)s), (%(id__1)s, %(assigned_id__1)s, %(is_control__1)s, ... 1836 characters truncated ... __19)s, %(assigned_id__19)s, %(is_control__19)s, %(interaction_type__19)s, %(interaction_time__19)s)]
+[parameters: {'assigned_id__0': 12, 'interaction_type__0': 'views', 'id__0': 826129070, 'is_control__0': False, 'interaction_time__0': datetime.datetime(2023, 7, 16, 14, 24, 2, 249717), 'assigned_id__1': 12, 'interaction_type__1': 'views', 'id__1': 749402103, 'is_control__1': False, 'interaction_time__1': datetime.datetime(2023, 7, 16, 14, 24, 2, 249722), 'assigned_id__2': 12, 'interaction_type__2': 'views', 'id__2': 718279737, 'is_control__2': False, 'interaction_time__2': datetime.datetime(2023, 7, 16, 14, 24, 2, 249723), 'assigned_id__3': 12, 'interaction_type__3': 'views', 'id__3': 978194339, 'is_control__3': False, 'interaction_time__3': datetime.datetime(2023, 7, 16, 14, 24, 2, 249724), 'assigned_id__4': 12, 'interaction_type__4': 'views', 'id__4': 746529337, 'is_control__4': False, 'interaction_time__4': datetime.datetime(2023, 7, 16, 14, 24, 2, 249725), 'assigned_id__5': 12, 'interaction_type__5': 'views', 'id__5': 238811295, 'is_control__5': False, 'interaction_time__5': datetime.datetime(2023, 7, 16, 14, 24, 2, 249725), 'assigned_id__6': 12, 'interaction_type__6': 'views', 'id__6': 796950532, 'is_control__6': False, 'interaction_time__6': datetime.datetime(2023, 7, 16, 14, 24, 2, 249726), 'assigned_id__7': 12, 'interaction_type__7': 'views', 'id__7': 153262613, 'is_control__7': False, 'interaction_time__7': datetime.datetime(2023, 7, 16, 14, 24, 2, 249727), 'assigned_id__8': 12, 'interaction_type__8': 'views', 'id__8': 691941679, 'is_control__8': False, 'interaction_time__8': datetime.datetime(2023, 7, 16, 14, 24, 2, 249728), 'assigned_id__9': 12, 'interaction_type__9': 'views', 'id__9': 538384674, 'is_control__9': False, 'interaction_time__9': datetime.datetime(2023, 7, 16, 14, 24, 2, 249728), 'assigned_id__10': 12, 'interaction_type__10': 'views', 'id__10': 284135233, 'is_control__10': False, 'interaction_time__10': datetime.datetime(2023, 7, 16, 14, 24, 2, 249729), 'assigned_id__11': 12, 'interaction_type__11': 'views', 'id__11': 194468414, 'is_control__11': False, 'interaction_time__11': datetime.datetime(2023, 7, 16, 14, 24, 2, 249730), 'assigned_id__12': 12, 'interaction_type__12': 'views', 'id__12': 521771742, 'is_control__12': False, 'interaction_time__12': datetime.datetime(2023, 7, 16, 14, 24, 2, 249731), 'assigned_id__13': 12, 'interaction_type__13': 'views', 'id__13': 444028937, 'is_control__13': False, 'interaction_time__13': datetime.datetime(2023, 7, 16, 14, 24, 2, 249731), 'assigned_id__14': 12, 'interaction_type__14': 'views', 'id__14': 117434375, 'is_control__14': False, 'interaction_time__14': datetime.datetime(2023, 7, 16, 14, 24, 2, 249732), 'assigned_id__15': 12, 'interaction_type__15': 'views', 'id__15': 600741898, 'is_control__15': False, 'interaction_time__15': datetime.datetime(2023, 7, 16, 14, 24, 2, 249733), 'assigned_id__16': 12, 'interaction_type__16': 'views', 'id__16': 819978129, 'is_control__16': False, 'interaction_time__16': datetime.datetime(2023, 7, 16, 14, 24, 2, 249734), 'assigned_id__17': 12, 'interaction_type__17': 'views', 'id__17': 149102725, 'is_control__17': False, 'interaction_time__17': datetime.datetime(2023, 7, 16, 14, 24, 2, 249735), 'assigned_id__18': 12, 'interaction_type__18': 'views', 'id__18': 669350215, 'is_control__18': False, 'interaction_time__18': datetime.datetime(2023, 7, 16, 14, 24, 2, 249735), 'assigned_id__19': 12, 'interaction_type__19': 'views', 'id__19': 230883691, 'is_control__19': False, 'interaction_time__19': datetime.datetime(2023, 7, 16, 14, 24, 2, 249736)}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+ERROR:app.views:Error occurred during user interaction creation: (psycopg2.errors.UndefinedTable) relation "interactions" does not exist
+LINE 1: INSERT INTO interactions (id, assigned_id, is_control, inter...
+                    ^
+
+[SQL: INSERT INTO interactions (id, assigned_id, is_control, interaction_type, interaction_time) VALUES (%(id__0)s, %(assigned_id__0)s, %(is_control__0)s, %(interaction_type__0)s, %(interaction_time__0)s), (%(id__1)s, %(assigned_id__1)s, %(is_control__1)s, ... 1836 characters truncated ... __19)s, %(assigned_id__19)s, %(is_control__19)s, %(interaction_type__19)s, %(interaction_time__19)s)]
+[parameters: {'assigned_id__0': 12, 'interaction_type__0': 'views', 'id__0': 826129070, 'is_control__0': False, 'interaction_time__0': datetime.datetime(2023, 7, 16, 14, 24, 2, 249717), 'assigned_id__1': 12, 'interaction_type__1': 'views', 'id__1': 749402103, 'is_control__1': False, 'interaction_time__1': datetime.datetime(2023, 7, 16, 14, 24, 2, 249722), 'assigned_id__2': 12, 'interaction_type__2': 'views', 'id__2': 718279737, 'is_control__2': False, 'interaction_time__2': datetime.datetime(2023, 7, 16, 14, 24, 2, 249723), 'assigned_id__3': 12, 'interaction_type__3': 'views', 'id__3': 978194339, 'is_control__3': False, 'interaction_time__3': datetime.datetime(2023, 7, 16, 14, 24, 2, 249724), 'assigned_id__4': 12, 'interaction_type__4': 'views', 'id__4': 746529337, 'is_control__4': False, 'interaction_time__4': datetime.datetime(2023, 7, 16, 14, 24, 2, 249725), 'assigned_id__5': 12, 'interaction_type__5': 'views', 'id__5': 238811295, 'is_control__5': False, 'interaction_time__5': datetime.datetime(2023, 7, 16, 14, 24, 2, 249725), 'assigned_id__6': 12, 'interaction_type__6': 'views', 'id__6': 796950532, 'is_control__6': False, 'interaction_time__6': datetime.datetime(2023, 7, 16, 14, 24, 2, 249726), 'assigned_id__7': 12, 'interaction_type__7': 'views', 'id__7': 153262613, 'is_control__7': False, 'interaction_time__7': datetime.datetime(2023, 7, 16, 14, 24, 2, 249727), 'assigned_id__8': 12, 'interaction_type__8': 'views', 'id__8': 691941679, 'is_control__8': False, 'interaction_time__8': datetime.datetime(2023, 7, 16, 14, 24, 2, 249728), 'assigned_id__9': 12, 'interaction_type__9': 'views', 'id__9': 538384674, 'is_control__9': False, 'interaction_time__9': datetime.datetime(2023, 7, 16, 14, 24, 2, 249728), 'assigned_id__10': 12, 'interaction_type__10': 'views', 'id__10': 284135233, 'is_control__10': False, 'interaction_time__10': datetime.datetime(2023, 7, 16, 14, 24, 2, 249729), 'assigned_id__11': 12, 'interaction_type__11': 'views', 'id__11': 194468414, 'is_control__11': False, 'interaction_time__11': datetime.datetime(2023, 7, 16, 14, 24, 2, 249730), 'assigned_id__12': 12, 'interaction_type__12': 'views', 'id__12': 521771742, 'is_control__12': False, 'interaction_time__12': datetime.datetime(2023, 7, 16, 14, 24, 2, 249731), 'assigned_id__13': 12, 'interaction_type__13': 'views', 'id__13': 444028937, 'is_control__13': False, 'interaction_time__13': datetime.datetime(2023, 7, 16, 14, 24, 2, 249731), 'assigned_id__14': 12, 'interaction_type__14': 'views', 'id__14': 117434375, 'is_control__14': False, 'interaction_time__14': datetime.datetime(2023, 7, 16, 14, 24, 2, 249732), 'assigned_id__15': 12, 'interaction_type__15': 'views', 'id__15': 600741898, 'is_control__15': False, 'interaction_time__15': datetime.datetime(2023, 7, 16, 14, 24, 2, 249733), 'assigned_id__16': 12, 'interaction_type__16': 'views', 'id__16': 819978129, 'is_control__16': False, 'interaction_time__16': datetime.datetime(2023, 7, 16, 14, 24, 2, 249734), 'assigned_id__17': 12, 'interaction_type__17': 'views', 'id__17': 149102725, 'is_control__17': False, 'interaction_time__17': datetime.datetime(2023, 7, 16, 14, 24, 2, 249735), 'assigned_id__18': 12, 'interaction_type__18': 'views', 'id__18': 669350215, 'is_control__18': False, 'interaction_time__18': datetime.datetime(2023, 7, 16, 14, 24, 2, 249735), 'assigned_id__19': 12, 'interaction_type__19': 'views', 'id__19': 230883691, 'is_control__19': False, 'interaction_time__19': datetime.datetime(2023, 7, 16, 14, 24, 2, 249736)}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+ERROR:app.utils.interaction_data:Error occurred during bulk insert: (psycopg2.errors.UndefinedTable) relation "interactions" does not exist
+LINE 1: INSERT INTO interactions (id, assigned_id, is_control, inter...
+                    ^
+
+[SQL: INSERT INTO interactions (id, assigned_id, is_control, interaction_type, interaction_time) VALUES (%(id__0)s, %(assigned_id__0)s, %(is_control__0)s, %(interaction_type__0)s, %(interaction_time__0)s), (%(id__1)s, %(assigned_id__1)s, %(is_control__1)s, ... 1836 characters truncated ... __19)s, %(assigned_id__19)s, %(is_control__19)s, %(interaction_type__19)s, %(interaction_time__19)s)]
+[parameters: {'assigned_id__0': 12, 'interaction_type__0': 'views', 'id__0': 35573188, 'is_control__0': False, 'interaction_time__0': datetime.datetime(2023, 7, 16, 14, 24, 46, 537980), 'assigned_id__1': 12, 'interaction_type__1': 'views', 'id__1': 705772532, 'is_control__1': False, 'interaction_time__1': datetime.datetime(2023, 7, 16, 14, 24, 46, 537982), 'assigned_id__2': 12, 'interaction_type__2': 'views', 'id__2': 125554572, 'is_control__2': False, 'interaction_time__2': datetime.datetime(2023, 7, 16, 14, 24, 46, 537983), 'assigned_id__3': 12, 'interaction_type__3': 'views', 'id__3': 719986278, 'is_control__3': False, 'interaction_time__3': datetime.datetime(2023, 7, 16, 14, 24, 46, 537984), 'assigned_id__4': 12, 'interaction_type__4': 'views', 'id__4': 190648896, 'is_control__4': False, 'interaction_time__4': datetime.datetime(2023, 7, 16, 14, 24, 46, 537985), 'assigned_id__5': 12, 'interaction_type__5': 'views', 'id__5': 494605113, 'is_control__5': False, 'interaction_time__5': datetime.datetime(2023, 7, 16, 14, 24, 46, 537990), 'assigned_id__6': 12, 'interaction_type__6': 'views', 'id__6': 724767222, 'is_control__6': False, 'interaction_time__6': datetime.datetime(2023, 7, 16, 14, 24, 46, 537991), 'assigned_id__7': 12, 'interaction_type__7': 'views', 'id__7': 488717872, 'is_control__7': False, 'interaction_time__7': datetime.datetime(2023, 7, 16, 14, 24, 46, 537991), 'assigned_id__8': 12, 'interaction_type__8': 'views', 'id__8': 455917113, 'is_control__8': False, 'interaction_time__8': datetime.datetime(2023, 7, 16, 14, 24, 46, 537992), 'assigned_id__9': 12, 'interaction_type__9': 'views', 'id__9': 770045428, 'is_control__9': False, 'interaction_time__9': datetime.datetime(2023, 7, 16, 14, 24, 46, 537993), 'assigned_id__10': 12, 'interaction_type__10': 'views', 'id__10': 917950288, 'is_control__10': False, 'interaction_time__10': datetime.datetime(2023, 7, 16, 14, 24, 46, 537993), 'assigned_id__11': 12, 'interaction_type__11': 'views', 'id__11': 503764087, 'is_control__11': False, 'interaction_time__11': datetime.datetime(2023, 7, 16, 14, 24, 46, 537994), 'assigned_id__12': 12, 'interaction_type__12': 'views', 'id__12': 119827962, 'is_control__12': False, 'interaction_time__12': datetime.datetime(2023, 7, 16, 14, 24, 46, 537995), 'assigned_id__13': 12, 'interaction_type__13': 'views', 'id__13': 106189017, 'is_control__13': False, 'interaction_time__13': datetime.datetime(2023, 7, 16, 14, 24, 46, 537995), 'assigned_id__14': 12, 'interaction_type__14': 'views', 'id__14': 485112073, 'is_control__14': False, 'interaction_time__14': datetime.datetime(2023, 7, 16, 14, 24, 46, 537996), 'assigned_id__15': 12, 'interaction_type__15': 'views', 'id__15': 5222303, 'is_control__15': False, 'interaction_time__15': datetime.datetime(2023, 7, 16, 14, 24, 46, 538001), 'assigned_id__16': 12, 'interaction_type__16': 'views', 'id__16': 42857869, 'is_control__16': False, 'interaction_time__16': datetime.datetime(2023, 7, 16, 14, 24, 46, 538001), 'assigned_id__17': 12, 'interaction_type__17': 'views', 'id__17': 831350293, 'is_control__17': False, 'interaction_time__17': datetime.datetime(2023, 7, 16, 14, 24, 46, 538002), 'assigned_id__18': 12, 'interaction_type__18': 'views', 'id__18': 82450035, 'is_control__18': False, 'interaction_time__18': datetime.datetime(2023, 7, 16, 14, 24, 46, 538003), 'assigned_id__19': 12, 'interaction_type__19': 'views', 'id__19': 747052159, 'is_control__19': False, 'interaction_time__19': datetime.datetime(2023, 7, 16, 14, 24, 46, 538004)}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+ERROR:app.views:Error occurred during user interaction creation: (psycopg2.errors.UndefinedTable) relation "interactions" does not exist
+LINE 1: INSERT INTO interactions (id, assigned_id, is_control, inter...
+                    ^
+
+[SQL: INSERT INTO interactions (id, assigned_id, is_control, interaction_type, interaction_time) VALUES (%(id__0)s, %(assigned_id__0)s, %(is_control__0)s, %(interaction_type__0)s, %(interaction_time__0)s), (%(id__1)s, %(assigned_id__1)s, %(is_control__1)s, ... 1836 characters truncated ... __19)s, %(assigned_id__19)s, %(is_control__19)s, %(interaction_type__19)s, %(interaction_time__19)s)]
+[parameters: {'assigned_id__0': 12, 'interaction_type__0': 'views', 'id__0': 35573188, 'is_control__0': False, 'interaction_time__0': datetime.datetime(2023, 7, 16, 14, 24, 46, 537980), 'assigned_id__1': 12, 'interaction_type__1': 'views', 'id__1': 705772532, 'is_control__1': False, 'interaction_time__1': datetime.datetime(2023, 7, 16, 14, 24, 46, 537982), 'assigned_id__2': 12, 'interaction_type__2': 'views', 'id__2': 125554572, 'is_control__2': False, 'interaction_time__2': datetime.datetime(2023, 7, 16, 14, 24, 46, 537983), 'assigned_id__3': 12, 'interaction_type__3': 'views', 'id__3': 719986278, 'is_control__3': False, 'interaction_time__3': datetime.datetime(2023, 7, 16, 14, 24, 46, 537984), 'assigned_id__4': 12, 'interaction_type__4': 'views', 'id__4': 190648896, 'is_control__4': False, 'interaction_time__4': datetime.datetime(2023, 7, 16, 14, 24, 46, 537985), 'assigned_id__5': 12, 'interaction_type__5': 'views', 'id__5': 494605113, 'is_control__5': False, 'interaction_time__5': datetime.datetime(2023, 7, 16, 14, 24, 46, 537990), 'assigned_id__6': 12, 'interaction_type__6': 'views', 'id__6': 724767222, 'is_control__6': False, 'interaction_time__6': datetime.datetime(2023, 7, 16, 14, 24, 46, 537991), 'assigned_id__7': 12, 'interaction_type__7': 'views', 'id__7': 488717872, 'is_control__7': False, 'interaction_time__7': datetime.datetime(2023, 7, 16, 14, 24, 46, 537991), 'assigned_id__8': 12, 'interaction_type__8': 'views', 'id__8': 455917113, 'is_control__8': False, 'interaction_time__8': datetime.datetime(2023, 7, 16, 14, 24, 46, 537992), 'assigned_id__9': 12, 'interaction_type__9': 'views', 'id__9': 770045428, 'is_control__9': False, 'interaction_time__9': datetime.datetime(2023, 7, 16, 14, 24, 46, 537993), 'assigned_id__10': 12, 'interaction_type__10': 'views', 'id__10': 917950288, 'is_control__10': False, 'interaction_time__10': datetime.datetime(2023, 7, 16, 14, 24, 46, 537993), 'assigned_id__11': 12, 'interaction_type__11': 'views', 'id__11': 503764087, 'is_control__11': False, 'interaction_time__11': datetime.datetime(2023, 7, 16, 14, 24, 46, 537994), 'assigned_id__12': 12, 'interaction_type__12': 'views', 'id__12': 119827962, 'is_control__12': False, 'interaction_time__12': datetime.datetime(2023, 7, 16, 14, 24, 46, 537995), 'assigned_id__13': 12, 'interaction_type__13': 'views', 'id__13': 106189017, 'is_control__13': False, 'interaction_time__13': datetime.datetime(2023, 7, 16, 14, 24, 46, 537995), 'assigned_id__14': 12, 'interaction_type__14': 'views', 'id__14': 485112073, 'is_control__14': False, 'interaction_time__14': datetime.datetime(2023, 7, 16, 14, 24, 46, 537996), 'assigned_id__15': 12, 'interaction_type__15': 'views', 'id__15': 5222303, 'is_control__15': False, 'interaction_time__15': datetime.datetime(2023, 7, 16, 14, 24, 46, 538001), 'assigned_id__16': 12, 'interaction_type__16': 'views', 'id__16': 42857869, 'is_control__16': False, 'interaction_time__16': datetime.datetime(2023, 7, 16, 14, 24, 46, 538001), 'assigned_id__17': 12, 'interaction_type__17': 'views', 'id__17': 831350293, 'is_control__17': False, 'interaction_time__17': datetime.datetime(2023, 7, 16, 14, 24, 46, 538002), 'assigned_id__18': 12, 'interaction_type__18': 'views', 'id__18': 82450035, 'is_control__18': False, 'interaction_time__18': datetime.datetime(2023, 7, 16, 14, 24, 46, 538003), 'assigned_id__19': 12, 'interaction_type__19': 'views', 'id__19': 747052159, 'is_control__19': False, 'interaction_time__19': datetime.datetime(2023, 7, 16, 14, 24, 46, 538004)}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+ERROR:app.utils.interaction_data:Error occurred during bulk insert: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "winab_dev"
+connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "winab_dev"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+ERROR:app.views:Error occurred during user interaction creation: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "winab_dev"
+connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "winab_dev"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+ERROR:app.utils.interaction_data:Error occurred during bulk insert: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "winab_dev"
+connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "winab_dev"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+ERROR:app.views:Error occurred during user interaction creation: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "winab_dev"
+connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "winab_dev"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+ERROR:app.utils.interaction_data:Error occurred during bulk insert: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "winab_dev"
+connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "winab_dev"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+ERROR:app.views:Error occurred during user interaction creation: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "winab_dev"
+connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "winab_dev"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Successfully inserted 20 interactions to the database
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Successfully inserted 20 interactions to the database
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Successfully inserted 20 interactions to the database
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Successfully inserted 20 interactions to the database
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Successfully inserted 20 interactions to the database
+INFO:root:Starting update...
+ERROR:root:Error updating aggregates: (psycopg2.errors.UndefinedColumn) column aggregates.is_control does not exist
+LINE 1: ...es_total_views, aggregates.ctr AS aggregates_ctr, aggregates...
+                                                             ^
+
+[SQL: SELECT aggregates.id AS aggregates_id, aggregates.assigned_id AS aggregates_assigned_id, aggregates.last_updated AS aggregates_last_updated, aggregates.total_clicks AS aggregates_total_clicks, aggregates.total_views AS aggregates_total_views, aggregates.ctr AS aggregates_ctr, aggregates.is_control AS aggregates_is_control 
+FROM aggregates 
+WHERE aggregates.assigned_id = %(assigned_id_1)s ORDER BY aggregates.last_updated DESC 
+ LIMIT %(param_1)s]
+[parameters: {'assigned_id_1': 12, 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:root:Starting update...
+ERROR:root:Error updating aggregates: (psycopg2.errors.UndefinedColumn) column aggregates.is_control does not exist
+LINE 1: ...es_total_views, aggregates.ctr AS aggregates_ctr, aggregates...
+                                                             ^
+
+[SQL: SELECT aggregates.id AS aggregates_id, aggregates.assigned_id AS aggregates_assigned_id, aggregates.last_updated AS aggregates_last_updated, aggregates.total_clicks AS aggregates_total_clicks, aggregates.total_views AS aggregates_total_views, aggregates.ctr AS aggregates_ctr, aggregates.is_control AS aggregates_is_control 
+FROM aggregates 
+WHERE aggregates.assigned_id = %(assigned_id_1)s ORDER BY aggregates.last_updated DESC 
+ LIMIT %(param_1)s]
+[parameters: {'assigned_id_1': 12, 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:root:Starting update...
+ERROR:root:Error updating aggregates: (psycopg2.errors.UndefinedColumn) column aggregates.is_control does not exist
+LINE 1: ...es_total_views, aggregates.ctr AS aggregates_ctr, aggregates...
+                                                             ^
+
+[SQL: SELECT aggregates.id AS aggregates_id, aggregates.assigned_id AS aggregates_assigned_id, aggregates.last_updated AS aggregates_last_updated, aggregates.total_clicks AS aggregates_total_clicks, aggregates.total_views AS aggregates_total_views, aggregates.ctr AS aggregates_ctr, aggregates.is_control AS aggregates_is_control 
+FROM aggregates 
+WHERE aggregates.assigned_id = %(assigned_id_1)s ORDER BY aggregates.last_updated DESC 
+ LIMIT %(param_1)s]
+[parameters: {'assigned_id_1': 12, 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:root:Starting update...
+ERROR:root:Error updating aggregates: (psycopg2.errors.UndefinedColumn) column aggregates.is_control does not exist
+LINE 1: ...es_total_views, aggregates.ctr AS aggregates_ctr, aggregates...
+                                                             ^
+
+[SQL: SELECT aggregates.id AS aggregates_id, aggregates.assigned_id AS aggregates_assigned_id, aggregates.last_updated AS aggregates_last_updated, aggregates.total_clicks AS aggregates_total_clicks, aggregates.total_views AS aggregates_total_views, aggregates.ctr AS aggregates_ctr, aggregates.is_control AS aggregates_is_control 
+FROM aggregates 
+WHERE aggregates.assigned_id = %(assigned_id_1)s ORDER BY aggregates.last_updated DESC 
+ LIMIT %(param_1)s]
+[parameters: {'assigned_id_1': 12, 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:root:Starting update...
+ERROR:root:Error updating aggregates: (psycopg2.errors.UndefinedColumn) column aggregates.is_control does not exist
+LINE 1: ...es_total_views, aggregates.ctr AS aggregates_ctr, aggregates...
+                                                             ^
+
+[SQL: SELECT aggregates.id AS aggregates_id, aggregates.assigned_id AS aggregates_assigned_id, aggregates.last_updated AS aggregates_last_updated, aggregates.total_clicks AS aggregates_total_clicks, aggregates.total_views AS aggregates_total_views, aggregates.ctr AS aggregates_ctr, aggregates.is_control AS aggregates_is_control 
+FROM aggregates 
+WHERE aggregates.assigned_id = %(assigned_id_1)s ORDER BY aggregates.last_updated DESC 
+ LIMIT %(param_1)s]
+[parameters: {'assigned_id_1': 12, 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:root:Starting update...
+ERROR:root:Error updating aggregates: (psycopg2.errors.UndefinedColumn) column aggregates.is_control does not exist
+LINE 1: ...es_total_views, aggregates.ctr AS aggregates_ctr, aggregates...
+                                                             ^
+
+[SQL: SELECT aggregates.id AS aggregates_id, aggregates.assigned_id AS aggregates_assigned_id, aggregates.last_updated AS aggregates_last_updated, aggregates.total_clicks AS aggregates_total_clicks, aggregates.total_views AS aggregates_total_views, aggregates.ctr AS aggregates_ctr, aggregates.is_control AS aggregates_is_control 
+FROM aggregates 
+WHERE aggregates.assigned_id = %(assigned_id_1)s ORDER BY aggregates.last_updated DESC 
+ LIMIT %(param_1)s]
+[parameters: {'assigned_id_1': 12, 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:root:Starting update...
+INFO:root:Last updated time for id 12: 0001-01-01 00:00:00+00:00
+INFO:root:Total clicks for id 12: 0
+INFO:root:Total views for id 12: 22
+INFO:root:Aggregate before commit: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7f4e3b78c580>, 'assigned_id': 12, 'last_updated': datetime.datetime(2023, 7, 16, 15, 30, 1, 855580), 'is_control': False, 'total_clicks': 0, 'total_views': 22, 'ctr': 0.0}
+INFO:root:Last updated time for id 1: 0001-01-01 00:00:00+00:00
+INFO:root:Total clicks for id 1: 29
+INFO:root:Total views for id 1: 49
+INFO:root:Aggregate before commit: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7f4e3ba55f40>, 'assigned_id': 1, 'last_updated': datetime.datetime(2023, 7, 16, 15, 30, 1, 871295), 'is_control': True, 'total_clicks': 29, 'total_views': 49, 'ctr': 0.5918367346938775}
+INFO:root:Update completed successfully.
+INFO:root:Starting update...
+INFO:root:Last updated time for id 12: 0001-01-01 00:00:00+00:00
+INFO:root:Total clicks for id 12: 0
+INFO:root:Total views for id 12: 22
+INFO:root:Aggregate before commit: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fb59a4aff40>, 'assigned_id': 12, 'last_updated': datetime.datetime(2023, 7, 16, 15, 31, 1, 936480), 'is_control': False, 'total_clicks': 0, 'total_views': 22, 'ctr': 0.0}
+INFO:root:Last updated time for id 1: 2023-07-16 15:30:01.871295+00:00
+INFO:root:Total clicks for id 1: 0
+INFO:root:Total views for id 1: 0
+INFO:root:Aggregate before commit: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fb59a456ca0>, 'assigned_id': 1, 'last_updated': datetime.datetime(2023, 7, 16, 15, 31, 1, 943858), 'is_control': True, 'total_clicks': 0, 'total_views': 0, 'ctr': 0}
+INFO:root:Update completed successfully.
+INFO:root:Starting update...
+INFO:root:Last updated time for id 12: 0001-01-01 00:00:00+00:00
+INFO:root:Total clicks for id 12: 0
+INFO:root:Total views for id 12: 22
+INFO:root:Aggregate before commit: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fb59a3ff940>, 'assigned_id': 12, 'last_updated': datetime.datetime(2023, 7, 16, 15, 32, 1, 991626), 'is_control': False, 'total_clicks': 0, 'total_views': 22, 'ctr': 0.0}
+INFO:root:Last updated time for id 1: 2023-07-16 15:30:01.871295+00:00
+INFO:root:Total clicks for id 1: 0
+INFO:root:Total views for id 1: 0
+INFO:root:Aggregate before commit: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fb59a3ffa60>, 'assigned_id': 1, 'last_updated': datetime.datetime(2023, 7, 16, 15, 32, 1, 997986), 'is_control': True, 'total_clicks': 0, 'total_views': 0, 'ctr': 0}
+INFO:root:Update completed successfully.
+INFO:root:Starting update...
+INFO:root:Last updated time for id 12: 0001-01-01 00:00:00+00:00
+INFO:root:Total clicks for id 12: 0
+INFO:root:Total views for id 12: 22
+INFO:root:Aggregate before commit: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fb59a3ff400>, 'assigned_id': 12, 'last_updated': datetime.datetime(2023, 7, 16, 15, 33, 1, 47320), 'is_control': False, 'total_clicks': 0, 'total_views': 22, 'ctr': 0.0}
+INFO:root:Last updated time for id 1: 2023-07-16 15:30:01.871295+00:00
+INFO:root:Total clicks for id 1: 0
+INFO:root:Total views for id 1: 0
+INFO:root:Aggregate before commit: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fb59a3ffb20>, 'assigned_id': 1, 'last_updated': datetime.datetime(2023, 7, 16, 15, 33, 1, 53080), 'is_control': True, 'total_clicks': 0, 'total_views': 0, 'ctr': 0}
+INFO:root:Update completed successfully.
+INFO:root:Starting update...
+INFO:root:Last updated time for id 12: 0001-01-01 00:00:00+00:00
+INFO:root:Total clicks for id 12: 0
+INFO:root:Total views for id 12: 22
+INFO:root:Aggregate before commit: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fb59a3ff760>, 'assigned_id': 12, 'last_updated': datetime.datetime(2023, 7, 16, 15, 34, 1, 91353), 'is_control': False, 'total_clicks': 0, 'total_views': 22, 'ctr': 0.0}
+INFO:root:Last updated time for id 1: 2023-07-16 15:30:01.871295+00:00
+INFO:root:Total clicks for id 1: 0
+INFO:root:Total views for id 1: 0
+INFO:root:Aggregate before commit: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fb59a3ffbe0>, 'assigned_id': 1, 'last_updated': datetime.datetime(2023, 7, 16, 15, 34, 1, 97423), 'is_control': True, 'total_clicks': 0, 'total_views': 0, 'ctr': 0}
+INFO:root:Update completed successfully.
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'clicks', 'is_control': True}
+INFO:app.utils.interaction_data:Successfully inserted 20 interactions to the database
+INFO:root:Starting update...
+INFO:root:Last updated time for id 12: 0001-01-01 00:00:00+00:00
+INFO:root:Total clicks for id 12: 0
+INFO:root:Total views for id 12: 22
+INFO:root:Aggregate before commit: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fb59a3ff640>, 'assigned_id': 12, 'last_updated': datetime.datetime(2023, 7, 16, 15, 35, 1, 133218), 'is_control': False, 'total_clicks': 0, 'total_views': 22, 'ctr': 0.0}
+INFO:root:Last updated time for id 1: 2023-07-16 15:30:01.871295+00:00
+INFO:root:Total clicks for id 1: 9
+INFO:root:Total views for id 1: 11
+INFO:root:Aggregate before commit: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fb59a3ff760>, 'assigned_id': 1, 'last_updated': datetime.datetime(2023, 7, 16, 15, 35, 1, 139102), 'is_control': True, 'total_clicks': 9, 'total_views': 11, 'ctr': 0.8181818181818182}
+INFO:root:Update completed successfully.
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Successfully inserted 20 interactions to the database
+INFO:root:Starting update...
+INFO:root:Last updated time for id 12: 0001-01-01 00:00:00+00:00
+INFO:root:Total clicks for id 12: 0
+INFO:root:Total views for id 12: 34
+INFO:root:Aggregate before commit: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fb59a3ff400>, 'assigned_id': 12, 'last_updated': datetime.datetime(2023, 7, 16, 15, 36, 1, 173955), 'is_control': False, 'total_clicks': 0, 'total_views': 34, 'ctr': 0.0}
+INFO:root:Last updated time for id 1: 2023-07-16 15:35:01.139102+00:00
+INFO:root:Total clicks for id 1: 0
+INFO:root:Total views for id 1: 8
+INFO:root:Aggregate before commit: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fb59a3ffb80>, 'assigned_id': 1, 'last_updated': datetime.datetime(2023, 7, 16, 15, 36, 1, 179006), 'is_control': True, 'total_clicks': 0, 'total_views': 8, 'ctr': 0.0}
+INFO:root:Update completed successfully.
+INFO:root:Starting update...
+INFO:root:Last updated time for id 12: 0001-01-01 00:00:00+00:00
+INFO:root:Total clicks for id 12: 0
+INFO:root:Total views for id 12: 34
+INFO:root:Aggregate before commit: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fb59a3ff940>, 'assigned_id': 12, 'last_updated': datetime.datetime(2023, 7, 16, 15, 37, 1, 213659), 'is_control': False, 'total_clicks': 0, 'total_views': 34, 'ctr': 0.0}
+INFO:root:Last updated time for id 1: 2023-07-16 15:35:01.139102+00:00
+INFO:root:Total clicks for id 1: 0
+INFO:root:Total views for id 1: 8
+INFO:root:Aggregate before commit: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fb59a3ffa60>, 'assigned_id': 1, 'last_updated': datetime.datetime(2023, 7, 16, 15, 37, 1, 218723), 'is_control': True, 'total_clicks': 0, 'total_views': 8, 'ctr': 0.0}
+INFO:root:Update completed successfully.
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'clicks', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'clicks', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'clicks', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'clicks', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'clicks', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'clicks', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'clicks', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'clicks', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'clicks', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'clicks', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Successfully inserted 20 interactions to the database
+INFO:root:Starting update...
+INFO:root:Last updated time for id 12: 0001-01-01 00:00:00+00:00
+INFO:root:Total clicks for id 12: 10
+INFO:root:Total views for id 12: 44
+INFO:root:Aggregate before commit: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fb59a3ff340>, 'assigned_id': 12, 'last_updated': datetime.datetime(2023, 7, 16, 15, 38, 1, 259434), 'is_control': False, 'total_clicks': 10, 'total_views': 44, 'ctr': 0.22727272727272727}
+INFO:root:Last updated time for id 1: 2023-07-16 15:35:01.139102+00:00
+INFO:root:Total clicks for id 1: 0
+INFO:root:Total views for id 1: 8
+INFO:root:Aggregate before commit: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fb59a3ffc40>, 'assigned_id': 1, 'last_updated': datetime.datetime(2023, 7, 16, 15, 38, 1, 267733), 'is_control': True, 'total_clicks': 0, 'total_views': 8, 'ctr': 0.0}
+INFO:root:Update completed successfully.
+INFO:root:Starting update...
+INFO:root:Last updated time for id 12: 2023-07-16 15:38:01.259434+00:00
+INFO:root:Total clicks for id 12: 0
+INFO:root:Total views for id 12: 0
+INFO:root:Aggregate before commit: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fb59a3ff1c0>, 'assigned_id': 12, 'last_updated': datetime.datetime(2023, 7, 16, 15, 39, 1, 311261), 'is_control': False, 'total_clicks': 0, 'total_views': 0, 'ctr': 0}
+INFO:root:Last updated time for id 1: 2023-07-16 15:35:01.139102+00:00
+INFO:root:Total clicks for id 1: 0
+INFO:root:Total views for id 1: 8
+INFO:root:Aggregate before commit: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fb59a3ff520>, 'assigned_id': 1, 'last_updated': datetime.datetime(2023, 7, 16, 15, 39, 1, 316178), 'is_control': True, 'total_clicks': 0, 'total_views': 8, 'ctr': 0.0}
+INFO:root:Update completed successfully.
+INFO:root:Starting update...
+INFO:root:Last updated time for id 12: 2023-07-16 15:38:01.259434+00:00
+INFO:root:Total clicks for id 12: 0
+INFO:root:Total views for id 12: 0
+INFO:root:Aggregate before commit: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fb59a3ff460>, 'assigned_id': 12, 'last_updated': datetime.datetime(2023, 7, 16, 15, 40, 1, 356311), 'is_control': False, 'total_clicks': 0, 'total_views': 0, 'ctr': 0}
+INFO:root:Last updated time for id 1: 2023-07-16 15:35:01.139102+00:00
+INFO:root:Total clicks for id 1: 0
+INFO:root:Total views for id 1: 8
+INFO:root:Aggregate before commit: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fb59a3ffa00>, 'assigned_id': 1, 'last_updated': datetime.datetime(2023, 7, 16, 15, 40, 1, 362265), 'is_control': True, 'total_clicks': 0, 'total_views': 8, 'ctr': 0.0}
+INFO:root:Update completed successfully.
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'clicks', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'clicks', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'clicks', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'clicks', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'clicks', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'clicks', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'clicks', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'clicks', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'clicks', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'clicks', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'clicks', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Successfully inserted 20 interactions to the database
+INFO:root:Starting update...
+INFO:root:Last updated time for id 12: 2023-07-16 15:38:01.259434+00:00
+INFO:root:Total clicks for id 12: 11
+INFO:root:Total views for id 12: 8
+INFO:root:Aggregate before commit: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fb59a3ff820>, 'assigned_id': 12, 'last_updated': datetime.datetime(2023, 7, 16, 15, 41, 1, 395715), 'is_control': False, 'total_clicks': 11, 'total_views': 8, 'ctr': 1.375}
+INFO:root:Last updated time for id 1: 2023-07-16 15:35:01.139102+00:00
+INFO:root:Total clicks for id 1: 0
+INFO:root:Total views for id 1: 9
+INFO:root:Aggregate before commit: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fb59a3ffc40>, 'assigned_id': 1, 'last_updated': datetime.datetime(2023, 7, 16, 15, 41, 1, 402692), 'is_control': True, 'total_clicks': 0, 'total_views': 9, 'ctr': 0.0}
+INFO:root:Update completed successfully.
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Successfully inserted 20 interactions to the database
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 1, 'interaction_type': 'views', 'is_control': True}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Processing interaction: {'assigned_id': 12, 'interaction_type': 'views', 'is_control': False}
+INFO:app.utils.interaction_data:Successfully inserted 20 interactions to the database
+INFO:root:Starting update...
+INFO:root:Last updated time for id 12: 2023-07-16 15:41:01.395715+00:00
+INFO:root:Total clicks for id 12: 0
+INFO:root:Total views for id 12: 19
+INFO:root:Aggregate before commit: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fb59a3ff940>, 'assigned_id': 12, 'last_updated': datetime.datetime(2023, 7, 16, 15, 42, 1, 435269), 'is_control': False, 'total_clicks': 0, 'total_views': 19, 'ctr': 0.0}
+INFO:root:Last updated time for id 1: 2023-07-16 15:35:01.139102+00:00
+INFO:root:Total clicks for id 1: 0
+INFO:root:Total views for id 1: 30
+INFO:root:Aggregate before commit: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fb59a3ffca0>, 'assigned_id': 1, 'last_updated': datetime.datetime(2023, 7, 16, 15, 42, 1, 440158), 'is_control': True, 'total_clicks': 0, 'total_views': 30, 'ctr': 0.0}
+INFO:root:Update completed successfully.

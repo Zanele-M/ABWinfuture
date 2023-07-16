@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from app.models import Aggregates, Interaction, Variants, Control, Campaign
 from sqlalchemy import func
 from datetime import datetime
