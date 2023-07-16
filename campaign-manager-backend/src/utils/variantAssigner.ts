@@ -44,10 +44,20 @@ async function assignVariantBasedOnThompsonSampling(campaign: Campaign, control:
     const assigned = assignedIndex === 0 ? control : variants[assignedIndex - 1];
 
     rollbar.log(`Assigned variant/control: ${assigned.name} with sampled CTR: ${maxSampledCTR}`);
+    
+    
+    let assignedIdentifier = assigned.identifier
+    let controlIdentifier = assigned.identifier
+
+
+    if (campaign.type === 'custom') {
+      assignedIdentifier = "";
+      controlIdentifier = "";
+    }
     return {
       campaignId: campaign.id,
-      assignedIdentifier: assigned.identifier,
-      controlIdentifier: control.identifier,
+      assignedIdentifier: assignedIdentifier,
+      controlIdentifier: controlIdentifier,
       assignedId: assigned.id,
       type: campaign.type,
       isControl: assignedIndex === 0,

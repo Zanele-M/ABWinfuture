@@ -68,7 +68,7 @@ function processNewCampaigns(originalContent: Map<number, OriginalContentValue>,
   } else if (type === 'image') {
     replaceTeaserImage(campaignId, controlIdentifier, assignedIdentifier, assignedId, false,  controlPaths);
   } else if (type === 'custom') {
-    // replaceCustomElementContent(controlIdentifier, assignedIdentifier);
+    replaceCustomElementContent(controlIdentifier, assignedIdentifier);
   }
 }
 
