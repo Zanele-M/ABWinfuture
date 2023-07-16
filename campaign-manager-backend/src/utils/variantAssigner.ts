@@ -33,10 +33,12 @@ async function assignVariantBasedOnThompsonSampling(campaign: Campaign, control:
       ...variantAggregates.map(aggregate => ({ totalClicks: aggregate.totalClicks, totalViews: aggregate.totalViews })),
     ];
 
-    const sampledCTRs = allClicksAndViews.map(({ totalClicks, totalViews }) => {
+    const sampledCTRs = allClicksAndViews.map(({ totalClicks, totalViews }, index) => {
       const alpha = totalClicks + 1;
       const beta = totalViews - totalClicks + 1;
-      return jStat.beta.sample(alpha, beta);
+      const sampledCTR = jStat.beta.sample(alpha, beta);
+      rollbar.log(`Distribution values for ${index === 0 ? 'control' : 'variant ' + index}: alpha=${alpha}, beta=${beta}, sampledCTR=${sampledCTR}`);
+      return sampledCTR;
     });
 
     const maxSampledCTR = Math.max(...sampledCTRs);
@@ -45,10 +47,8 @@ async function assignVariantBasedOnThompsonSampling(campaign: Campaign, control:
 
     rollbar.log(`Assigned variant/control: ${assigned.name} with sampled CTR: ${maxSampledCTR}`);
     
-    
     let assignedIdentifier = assigned.identifier
     let controlIdentifier = assigned.identifier
-
 
     if (campaign.type === 'custom') {
       assignedIdentifier = "";
