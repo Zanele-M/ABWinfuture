@@ -1,3 +1,4 @@
+
 import { ApiResponseData, CookieData } from "../types/CampaignCookies";
 import { checkBrowserSupport, findOccurrences, runCampaigns, handleApiResponse, sanitizeCookies } from "../utils";
 
@@ -58,15 +59,19 @@ export async function runCampaign() {
 
   try {
     const cookies = document.cookie;
+    let filteredCookies = '';  // Declare filteredCookies at a higher level
 
     if (cookies) {
-      console.warn('Found cookies');
-      const filteredCookies = cookies.split(';')
-        .map(cookie => cookie.trim())
-        .filter(cookie => cookie.startsWith('campaign_'))
-        .join(';');
+        console.warn('Found cookies');
+   filteredCookies = cookies.split(';')
+    .map(cookie => {
+      let decodedCookie = decodeURIComponent(cookie.trim());
+      return decodedCookie;
+    })
+    .filter(cookie => cookie.startsWith('campaign_'))
+    .join(';');
 
-      await hideElements(filteredCookies);
+  await hideElements(filteredCookies);
     } else {
       console.warn('No cookies found');
     }
@@ -82,7 +87,7 @@ export async function runCampaign() {
 
     // Make API call
     try {
-      const response = await timeout(2000, runCampaigns(cookies)); // 3 second timeout
+      const response = await timeout(2000, runCampaigns(filteredCookies)); // 3 second timeout
       if (isApiResponseData(response)) {
         console.log(JSON.stringify(response));  // Log campaignCookies
         handleApiResponse(response, originalContent);

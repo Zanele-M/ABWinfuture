@@ -7,8 +7,9 @@ import pauseCampaignRouter from './routes/pauseCampaignRouter';
 import Rollbar from 'rollbar';
 import resumeCampaignRouter from './routes/resumeCampaignRouter';
 import checkElementRouter from './routes/checkElementRouter';
+import * as path from 'path';
 
-dotenv.config();
+dotenv.config({ path: path.resolve(__dirname, './.env') });
 
 const isProd = process.env.NODE_ENV === 'production';
 

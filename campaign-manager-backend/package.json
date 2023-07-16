@@ -23,7 +23,7 @@
         "express-validator": "^7.0.1",
         "jsdom": "^22.1.0",
         "pg": "^8.6.0",
-        "rollbar": "^2.26.1",
+        "rollbar": "^2.26.2",
         "sanitize-html": "^2.11.0"
     },
     "devDependencies": {
