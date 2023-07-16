@@ -98,35 +98,24 @@ export function replaceTeaserImage(campaignId: number, controlIdentifier: string
  * @param {Campaign} campaign - The campaign data.
  */
 export function replaceCustomElementContent(className: string, campaign: CookieData): void {
-    //   const { controlIdentifier, assignedIdentifier, assignedId, isControl } = campaign;
+    const { controlIdentifier, assignedIdentifier, assignedId, isControl } = campaign;
 
-    //   // Find all occurrences of the control identifier
-    //   const occurrences = findOccurrences(className, controlIdentifier);
+    // Find all occurrences of the control identifier
+    const occurrences = findOccurrences(className, controlIdentifier);
 
-    //   occurrences.forEach((path: string) => {
-    //     const element = document.querySelector(path);
-    //     if (!element) return;
+    occurrences.forEach((path: string) => {
+        const element = document.querySelector(path);
+        if (!element) return;
 
-    //     // Replace the content or value of the element
-    //     if (element.textContent?.includes(controlIdentifier)) {
-    //       element.textContent = element.textContent.replace(controlIdentifier, assignedIdentifier);
-    //     }
-    //     if ((element as HTMLInputElement).value?.includes(controlIdentifier)) {
-    //       (element as HTMLInputElement).value = (element as HTMLInputElement).value.replace(controlIdentifier, assignedIdentifier);
-    //     }
-    //     if (element.getAttribute('src')?.includes(controlIdentifier)) {
-    //       element.setAttribute('src', element.getAttribute('src')?.replace(controlIdentifier, assignedIdentifier));
-    //     }
-    //     if (element.getAttribute('href')?.includes(controlIdentifier)) {
-    //       element.setAttribute('href', element.getAttribute('href')?.replace(controlIdentifier, assignedIdentifier));
-    //     }
+        // Replace the entire inner HTML if it includes the control identifier
+        if (element.innerHTML.includes(controlIdentifier)) {
+            element.innerHTML = element.innerHTML.replace(controlIdentifier, assignedIdentifier);
+        }
 
-    //     // Add event listeners
-    //     addImpressionClickListener(campaign.campaignId, path, assignedId, isControl);
-    //   });
+        // Add event listeners
+        addImpressionClickListener(campaign.campaignId, path, assignedId, isControl);
+    });
 }
-
-
 
 /**
 * Traverse the DOM tree of an HTML element and find occurrences of a search term in text or attributes.
