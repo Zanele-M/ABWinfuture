@@ -1,5 +1,4 @@
 import express from 'express';
-import runCampaignRouter from './routes/runCampaignRouter';
 import createCampaignRouter from './routes/createCampaignRouter';
 import dotenv from 'dotenv';
 import cors from 'cors';
@@ -48,7 +47,6 @@ app.use(rollbar.errorHandler());
 
 // Use your routers in the application
 app.use(createCampaignRouter);
-app.use(runCampaignRouter);
 app.use(pauseCampaignRouter);
 app.use(resumeCampaignRouter);
 app.use(checkElementRouter);
