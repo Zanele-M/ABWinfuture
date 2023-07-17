@@ -111,6 +111,8 @@ const CreateCampaign: React.FC<{ setCurrentTab: (tab: string) => void }> = (prop
         console.log('Element does not exist')
         throw new Error('Element does not exist on the website');
       }
+
+      console.log('Element does')
       const updatedCampaignData = {
         ...campaignData,
         control_name: 'Original',
