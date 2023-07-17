@@ -1,4 +1,3 @@
-import { CookieData } from "../types/CampaignCookies";
 import { addImpressionClickListener } from "./eventHandlers";
 
 /**
@@ -97,13 +96,12 @@ export function replaceTeaserImage(campaignId: number, controlIdentifier: string
  * @param {string} className - A CSS selector to identify the root HTML element for traversal.
  * @param {Campaign} campaign - The campaign data.
  */
-export function replaceCustomElementContent(className: string, campaign: CookieData): void {
-    const { controlIdentifier, assignedIdentifier, assignedId, isControl } = campaign;
+export function replaceCustomElementContent(campaignId: number, controlIdentifier: string, assignedIdentifier: string, assignedId: number, isControl: boolean): void {
 
     // Find all occurrences of the control identifier
-    const occurrences = findOccurrences(className, controlIdentifier);
+    const paths = findCustomElementOccurrences(controlIdentifier);
 
-    occurrences.forEach((path: string) => {
+    paths.forEach((path: string) => {
         const element = document.querySelector(path);
         if (!element) return;
 
@@ -113,9 +111,63 @@ export function replaceCustomElementContent(className: string, campaign: CookieD
         }
 
         // Add event listeners
-        addImpressionClickListener(campaign.campaignId, path, assignedId, isControl);
+        addImpressionClickListener(campaignId, path, assignedId, isControl);
     });
 }
+
+/**
+* Find all occurrences of the control identifier within custom elements in the DOM.
+* 
+* @param {string} controlIdentifier - The control identifier to find.
+* @returns {string[]} An array of CSS selector paths leading to custom elements where the control identifier was found.
+*/
+function findCustomElementOccurrences(controlIdentifier: string): string[] {
+    const elements = document.querySelectorAll('your-custom-selector-here');
+    const paths: string[] = [];
+
+    elements.forEach((element: Element) => {
+        if (element instanceof HTMLElement) {
+            if (element.innerHTML.includes(controlIdentifier)) {
+                const path = getElementPath(element);
+                if (path) {
+                    paths.push(path);
+                }
+            }
+        }
+    });
+
+    return paths;
+}
+
+/**
+* Get the CSS selector path of an element.
+* 
+* @param {Element} element - The element to get the path for.
+* @returns {string | null} The CSS selector path of the element, or null if it couldn't be determined.
+*/
+function getElementPath(element: HTMLElement): string | null {
+    const path: string[] = [];
+    let currentElement: HTMLElement | null = element;
+
+    while (currentElement) {
+        if (currentElement.id) {
+            path.unshift(`#${currentElement.id}`);
+            break;
+        } else if (currentElement.classList.length > 0) {
+            const classNames = Array.from(currentElement.classList);
+            path.unshift(...classNames.map(className => `.${className}`));
+        } else {
+            const tagName = currentElement.tagName.toLowerCase();
+            path.unshift(tagName);
+        }
+
+        currentElement = currentElement.parentElement;
+    }
+
+    return path.length > 0 ? path.join(' > ') : null;
+}
+
+
 
 /**
 * Traverse the DOM tree of an HTML element and find occurrences of a search term in text or attributes.
