@@ -1,7 +1,13 @@
 from flask import request, jsonify
-from app import app, db
-from app.models import Campaign, Control, Variant
+from app import db
+from app.models import Campaign, Control, Variants
 import rollbar
+from flask import Blueprint, jsonify
+import logging
+from flask_cors import cross_origin
+
+
+
 
 bp = Blueprint('views', __name__)
 logger = logging.getLogger(__name__)
@@ -26,7 +32,7 @@ def run_campaigns():
 
             for campaign in new_campaigns:
                 control = Control.query.filter_by(campaign_id=campaign.id).first()
-                variants = Variant.query.filter_by(campaign_id=campaign.id).all()
+                variants = Variants.query.filter_by(campaign_id=campaign.id).all()
                 campaign_cookie = assign_variant_to_user(campaign, control, variants)
                 if campaign_cookie:
                     campaign_cookies[campaign.id] = campaign_cookie
@@ -34,7 +40,7 @@ def run_campaigns():
         else:
             for campaign in active_campaigns:
                 control = Control.query.filter_by(campaign_id=campaign.id).first()
-                variants = Variant.query.filter_by(campaign_id=campaign.id).all()
+                variants = Variants.query.filter_by(campaign_id=campaign.id).all()
                 campaign_cookie = assign_variant_to_user(campaign, control, variants)
                 if campaign_cookie:
                     campaign_cookies[campaign.id] = campaign_cookie

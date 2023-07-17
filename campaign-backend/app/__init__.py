@@ -7,18 +7,6 @@ from .config import Config, DevelopmentConfig, ProductionConfig
 
 db = SQLAlchemy()
 
-import os
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from dotenv import load_dotenv
-from pathlib import Path
-import redis
-from .config import Config, DevelopmentConfig, ProductionConfig
-
-
-db = SQLAlchemy()
-redis_client = redis.Redis()
-
 def create_app():
 
     env_path = Path('.') / '.env'
