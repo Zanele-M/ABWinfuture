@@ -1,9 +1,8 @@
-from sqlalchemy import func
-from models import Aggregates  # Import from your actual project
+from app.models import Aggregates, CampaignResults, Control  # Import the required models from your actual project
 from scipy.stats import beta
 import random
 import logging
-from rollbar import rollbar  # Import Rollbar from your actual project
+import rollbar  # Import Rollbar from your actual project
 
 logger = logging.getLogger(__name__)
 
@@ -22,16 +21,16 @@ def assign_random_variant(campaign, control, variants):
     }
 
 # Main function
-async def assign_variant_based_on_thompson_sampling(session, campaign, control, variants):
+def assign_variant_based_on_thompson_sampling(campaign, control, variants):
     try:
         # Query the database directly here using SQLAlchemy ORM
         total_clicks_control = (
-            session.query(func.sum(Aggregates.total_clicks))
+            Aggregates.query.with_entities(func.sum(Aggregates.total_clicks))
             .filter(Aggregates.assigned_id == control.id)
             .scalar()
         ) or 0
         total_views_control = (
-            session.query(func.sum(Aggregates.total_views))
+            Aggregates.query.with_entities(func.sum(Aggregates.total_views))
             .filter(Aggregates.assigned_id == control.id)
             .scalar()
         ) or 0
@@ -39,12 +38,12 @@ async def assign_variant_based_on_thompson_sampling(session, campaign, control, 
         variant_aggregates = [
             {
                 "totalClicks": (
-                    session.query(func.sum(Aggregates.total_clicks))
+                    Aggregates.query.with_entities(func.sum(Aggregates.total_clicks))
                     .filter(Aggregates.assigned_id == variant.id)
                     .scalar()
                 ) or 0,
                 "totalViews": (
-                    session.query(func.sum(Aggregates.total_views))
+                    Aggregates.query.with_entities(func.sum(Aggregates.total_views))
                     .filter(Aggregates.assigned_id == variant.id)
                     .scalar()
                 ) or 0,
@@ -86,16 +85,22 @@ async def assign_variant_based_on_thompson_sampling(session, campaign, control, 
         rollbar.error(f"Failed to assign variant based on Thompson Sampling: {str(e)}")
         raise e
 
-async def assign_variant_to_user(campaign, control, variants, db):
-    confidence_interval_upper = await db.get_confidence_interval_upper(campaign.id)
+def assign_variant_to_user(campaign, control, variants):
+    campaign_results = CampaignResults.query.filter_by(campaign_id=campaign.id).first()
 
-    if confidence_interval_upper is None or confidence_interval_upper <= 60:
-        logger.info("Confidence interval is null or less than or equal to 60, assigning a random variant")
+    if campaign_results is None or campaign_results.confidence_interval_upper is None:
+        logger.info("No campaign results or confidence interval available, assigning a random variant")
+        return assign_random_variant(campaign, control, variants)
+
+    confidence_interval_upper = campaign_results.confidence_interval_upper
+
+    if confidence_interval_upper <= 60:
+        logger.info("Confidence interval is less than or equal to 60, assigning a random variant")
         return assign_random_variant(campaign, control, variants)
 
     if confidence_interval_upper > 60:
         logger.info("Confidence interval is above 60%, assigning based on Thompson Sampling")
-        return await assign_variant_based_on_thompson_sampling(campaign, control, variants, db)
+        return assign_variant_based_on_thompson_sampling(campaign, control, variants)
 
     logger.info("No specific condition was met, assigning a random variant")
     return assign_random_variant(campaign, control, variants)

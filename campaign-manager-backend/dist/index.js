@@ -28,7 +28,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.rollbar = void 0;
 const express_1 = __importDefault(require("express"));
-const runCampaignRouter_1 = __importDefault(require("./routes/runCampaignRouter"));
 const createCampaignRouter_1 = __importDefault(require("./routes/createCampaignRouter"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const cors_1 = __importDefault(require("cors"));
@@ -62,7 +61,6 @@ app.use(express_1.default.json());
 app.use(exports.rollbar.errorHandler());
 // Use your routers in the application
 app.use(createCampaignRouter_1.default);
-app.use(runCampaignRouter_1.default);
 app.use(pauseCampaignRouter_1.default);
 app.use(resumeCampaignRouter_1.default);
 app.use(checkElementRouter_1.default);

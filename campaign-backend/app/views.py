@@ -1,32 +1,33 @@
-from flask import request, jsonify
+from flask import Blueprint, jsonify, request
 from app import db
 from app.models import Campaign, Control, Variants
 import rollbar
-from flask import Blueprint, jsonify
-import logging
 from flask_cors import cross_origin
-from app.utils.sanitize import process_cookies
-
-
+from app.utils.sanitize import get_campaign_cookies
+import logging
+from app.utils.variantAssigner import assign_variant_to_user
 bp = Blueprint('views', __name__)
 logger = logging.getLogger(__name__)
 
 @bp.route('/run_campaigns', methods=['POST'])
 @cross_origin()
 def run_campaigns():
-    cookies = process_cookies(request.json.get('cookies'))
+    campaign_cookies = get_campaign_cookies(request.json.get('cookies'))
     try:
-        active_campaigns = Campaign.query.filter_by(is_active=True).all()
+        active_campaigns = Campaign.query.filter_by(status='running').all()
         active_campaign_ids = [campaign.id for campaign in active_campaigns]
-        campaign_cookies = {}
 
-        if cookies:
-            campaign_cookies = get_campaign_cookies(cookies)
+        if campaign_cookies:
+            # Remove cookies for campaigns that are not active
+            campaign_cookies = {campaign_id: cookie for campaign_id, cookie in campaign_cookies.items() if campaign_id in active_campaign_ids}
 
-            for campaign_id, cookie in list(campaign_cookies.items()):
-                if campaign_id not in active_campaign_ids:
+            # Delete cookies for campaigns that are paused or completed
+            for campaign_id in campaign_cookies.keys():
+                campaign = Campaign.query.get(campaign_id)
+                if campaign and campaign.status in ['paused', 'completed']:
                     del campaign_cookies[campaign_id]
 
+            # Assign new cookies for campaigns that were not in the original cookies
             new_campaigns = [campaign for campaign in active_campaigns if campaign.id not in campaign_cookies]
 
             for campaign in new_campaigns:

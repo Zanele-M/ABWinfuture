@@ -1,0 +1,54 @@
+from app import db
+from app.models import Campaign, Control, Variants
+import rollbar
+from flask import Blueprint, jsonify, request
+import logging
+from flask_cors import cross_origin
+from app.utils.sanitize import process_cookies
+from app.utils.variantAssigner import assign_variant_to_user
+
+
+bp = Blueprint('views', __name__)
+logger = logging.getLogger(__name__)
+
+@bp.route('/run_campaigns', methods=['POST'])
+@cross_origin()
+def run_campaigns():
+    cookies = process_cookies(request.json.get('cookies', {}))
+
+    try:
+        active_campaigns = Campaign.query.filter_by(status='running').all()
+        active_campaign_ids = [campaign.id for campaign in active_campaigns]
+	campaign_cookies = cookies
+
+        # If cookies dict is empty, we initialize all campaigns with the corresponding variant.
+        if not cookies:
+            for campaign in active_campaigns:
+                control = Control.query.filter_by(campaign_id=campaign.id).first()
+                variants = Variants.query.filter_by(campaign_id=campaign.id).all()
+                campaign_cookie = assign_variant_to_user(campaign, control, variants)
+                if campaign_cookie:
+                    campaign_cookies[campaign.id] = campaign_cookie
+
+        else:  # If we do have cookies, we only initialize the ones that are not already in the cookies dict.
+            for campaign_id in list(cookies.keys()):
+                if campaign_id not in active_campaign_ids:
+                    del cookies[campaign_id]
+
+            new_campaigns = [campaign for campaign in active_campaigns if campaign.id not in cookies]
+
+            for campaign in new_campaigns:
+                control = Control.query.filter_by(campaign_id=campaign.id).first()
+                variants = Variants.query.filter_by(campaign_id=campaign.id).all()
+                campaign_cookie = assign_variant_to_user(campaign, control, variants)
+                if campaign_cookie:
+                    campaign_cookies[campaign.id] = campaign_cookie
+
+        logger.info(f"Cookie data has been successfully updated for campaigns: {cookies}")
+        rollbar.report_message(f"Cookie data has been successfully updated for campaigns: {cookies}", 'info')
+
+        return jsonify({'message': 'Cookie data has been successfully updated', 'campaignCookies': cookies}), 200
+    except Exception as e:
+        logger.error(f"Error during campaign processing: {e}")
+        rollbar.report_exc_info()
+        return jsonify({'error': str(e)}), 500
