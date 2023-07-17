@@ -48,6 +48,7 @@ export const checkElementExistence = async (req: Request, res: Response) => {
             elementExists = Array.from(document.querySelectorAll('a')).some(el => el.textContent && el.textContent.includes(identifier));
         } else if (type === 'image') {
             const imgSources = Array.from(document.querySelectorAll('img')).map(img => img.getAttribute('src'));
+            console.log('Image sources:', imgSources);
             elementExists = imgSources.includes(identifier);
         }
 
