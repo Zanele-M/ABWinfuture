@@ -53,8 +53,7 @@ export const checkElementExistence = async (req: Request, res: Response) => {
 
         console.log('Element exists:', elementExists);
 
-        res.status(200).json({ elementExists });
-
+        res.status(200).json({ elementExists })
     } catch (error) {
         const extra_data = { identifier, type, url };
         rollbar.error(`Error during website scraping: ${error}`, extra_data);

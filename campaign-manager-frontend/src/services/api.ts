@@ -111,6 +111,8 @@ const ABTestService = {
         })
       });
       const data: CheckElementResponse = await response.json();
+
+      console.log('Response data:', data); // Log the response data to inspect its structure
       if (data.exists !== undefined) {
         return data.exists;
       } else {
