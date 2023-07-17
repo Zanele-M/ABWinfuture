@@ -93,8 +93,12 @@ export function replaceTeaserImage(campaignId: number, controlIdentifier: string
 /**
  * Replace the content and attributes of custom elements in a class with given values.
  * 
- * @param {string} className - A CSS selector to identify the root HTML element for traversal.
- * @param {Campaign} campaign - The campaign data.
+ * @param {number} campaignId - The ID of the campaign.
+ * @param {string} controlIdentifier - The identifier of the control element.
+ * @param {string} assignedIdentifier - The identifier to replace the control element with.
+ * @param {nuwhermber} assignedId - The ID of the assigned element.
+ * @param {boolean} isControl - Indicates if the assigned element is the control element.
+ * @returns {void}
  */
 export function replaceCustomElementContent(campaignId: number, controlIdentifier: string, assignedIdentifier: string, assignedId: number, isControl: boolean): void {
 
