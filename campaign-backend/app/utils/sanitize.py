@@ -13,5 +13,3 @@ def process_cookies(cookies):
         logger.error(f"Error processing cookies: {e}")
         rollbar.report_exc_info()
         return {}
-
-Please replace 'your-rollbar-access-token' and 'your-environment' with your actual Rollbar access token and environment.

@@ -5,8 +5,7 @@ import rollbar
 from flask import Blueprint, jsonify
 import logging
 from flask_cors import cross_origin
-
-
+from app.utils.sanitize import process_cookies
 
 
 bp = Blueprint('views', __name__)
