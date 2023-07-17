@@ -43,5 +43,5 @@ export interface CampaignResultResponse {
 
 
 export interface CheckElementResponse {
-  exists: boolean;
+  elementExists: boolean;
 }
