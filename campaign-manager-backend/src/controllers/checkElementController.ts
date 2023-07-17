@@ -22,6 +22,8 @@ export const validateCheckElementExistence = [
 
 /**
  * Function to check if an element exists on the webpage.
+ * @param {Request} req - The HTTP request object.
+ * @param {Response} res - The HTTP response object.
  */
 export const checkElementExistence = async (req: Request, res: Response) => {
     const type = req.body.type;
@@ -30,10 +32,12 @@ export const checkElementExistence = async (req: Request, res: Response) => {
 
     // check if the required params and query are provided
     if (!identifier || !type || !url) {
+        console.log('Missing required parameters or query.');
         return res.status(400).json({ error: 'Missing required parameters or query.' });
     }
 
-    console.log(identifier)
+    console.log('Identifier:', identifier);
+
     try {
         const response = await axios.get(url);
         const dom = new JSDOM(response.data);
@@ -42,11 +46,12 @@ export const checkElementExistence = async (req: Request, res: Response) => {
 
         if (type === 'headline') {
             elementExists = Array.from(document.querySelectorAll('a')).some(el => el.textContent && el.textContent.includes(identifier));
-        }
-         else if (type === 'image') {
+        } else if (type === 'image') {
             const imgSources = Array.from(document.querySelectorAll('img')).map(img => img.getAttribute('src'));
             elementExists = imgSources.includes(identifier);
         }
+
+        console.log('Element exists:', elementExists);
 
         res.status(200).json({ elementExists });
 
@@ -57,5 +62,6 @@ export const checkElementExistence = async (req: Request, res: Response) => {
         res.status(500).json({ error: 'An error occurred during website scraping.' });
     }
 }
+
 
 export default checkElementExistence;
