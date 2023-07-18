@@ -1,0 +1,13 @@
+# Ignore .env files
+campaign-manager-backend/.env
+campaign-results/.env
+campaign-backend/.env
+campaign-data-collector/.env
+
+# Ignore node_modules in backend
+campaign-manager-backend/node_modules/
+
+# Ignore node_modules in frontend
+campaign-backend/node_modules/
+campaign-results/node_modules/
+campaign-data-collector/node_modules/

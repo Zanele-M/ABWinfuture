@@ -42,7 +42,12 @@ export async function runCampaigns(cookies: string) {
     throw new Error(`Server responded with status: ${response.status}. Message: ${errorData.message}`);
   }
 
-  return await response.json();
+
+  
+  
+  console.log('Response data:', response);
+
+  return JSON.parse(responseData); 
 }
 
   

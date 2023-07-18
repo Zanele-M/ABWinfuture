@@ -17,5 +17,6 @@ export interface OriginalContentValue {
 }
 
 export interface ApiResponseData {
-  campaignCookies: { [s: string]: string };
+  campaignCookies: { [key: string]: CookieData };
+  message: string;
 }
