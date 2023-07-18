@@ -14,6 +14,8 @@ logger = logging.getLogger(__name__)
 def run_campaigns():
     campaign_cookies = get_campaign_cookies(request.json.get('cookies'))
     try:
+        logger.info(f"Campaign Cookies: {campaign_cookies}")
+
         active_campaigns = Campaign.query.filter_by(status='running').all()
         active_campaign_ids = [campaign.id for campaign in active_campaigns]
 
@@ -22,7 +24,7 @@ def run_campaigns():
             campaign_cookies = {campaign_id: cookie for campaign_id, cookie in campaign_cookies.items() if campaign_id in active_campaign_ids}
 
             # Delete cookies for campaigns that are paused or completed
-            for campaign_id in campaign_cookies.keys():
+            for campaign_id in campaign_cookies.kefys():
                 campaign = Campaign.query.get(campaign_id)
                 if campaign and campaign.status in ['paused', 'completed']:
                     del campaign_cookies[campaign_id]
