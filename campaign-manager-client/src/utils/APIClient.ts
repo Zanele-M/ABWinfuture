@@ -29,6 +29,9 @@ export function sendInteractionEvent(data: any, key: string): void {
   }
 
 export async function runCampaigns(cookies: string) {
+ if (!cookies) {
+    throw new Error('Cookies should not be empty');
+  }
   const response = await fetch('https://abtest.winfuture.mobi/run_campaign/run_campaigns', {
     method: 'POST',
     headers: {
