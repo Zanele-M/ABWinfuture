@@ -59,7 +59,7 @@ export async function runCampaign() {
 
   try {
     const cookies = document.cookie;
-    let filteredCookies = '';  // Declare filteredCookies at a higher level
+    let filteredCookies = "";  // Declare filteredCookies at a higher level
 
     if (cookies) {
         console.warn('Found cookies');
