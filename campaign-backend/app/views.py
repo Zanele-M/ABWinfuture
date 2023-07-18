@@ -15,10 +15,11 @@ def run_campaigns():
     print("hehjbhfdsbhdbsbsdbnbnsdf")
     cookies = request.json
     logger.info(f'lets check what the cookie is: {cookies}')
+    campaign_cookies = {}
+    if cookies.get('cookies').strip():  # checks if cookies is not an empty string or space
+        campaign_cookies = get_campaign_cookies(cookies.get('cookies'))
     return "hello"
-    # campaign_cookies = {}
-    # if cookies.get('cookies').strip():  # checks if cookies is not an empty string or space
-    #     campaign_cookies = get_campaign_cookies(cookies.get('cookies'))
+
     # try:
     #     logger.info(f"Campaign Cookies: {campaign_cookies}")
 
