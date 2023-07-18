@@ -107,4 +107,6 @@ export function handleApiResponse(data: ApiResponseData, originalContent: Map<nu
       expires.setFullYear(expires.getFullYear() + 1); // cookie expires in 1 year
       document.cookie = `campaign_${cookieName}=${cookieString}; SameSite=None; expires=${expires.toUTCString()}; path=/`;    }
   }
+  console.log('Campaign execution completed successfully!'); // Log success message here
+
 }

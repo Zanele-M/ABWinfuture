@@ -88,15 +88,12 @@ export async function runCampaign() {
     // Make API call
     try {
       const response = await timeout(2000, runCampaigns(filteredCookies)); // 3 second timeout
+      console.log("Response:", response)
       if (isApiResponseData(response)) {
         console.log(JSON.stringify(response));  // Log campaignCookies
-        try{
         handleApiResponse(response, originalContent);
         console.log('Campaign execution completed successfully!'); // Log success message here
 
-        } catch{
-          
-        }
       } else {
         throw new Error('API response error: missing campaignCookies');
       }
