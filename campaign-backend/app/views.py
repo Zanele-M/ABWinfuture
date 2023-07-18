@@ -13,8 +13,9 @@ logger = logging.getLogger(__name__)
 @cross_origin()
 def run_campaigns():
     cookies = request.json.get('cookies')
+    logger.info(f'lets check what the cookie is: {cookies}')
     campaign_cookies = {}
-    if cookies == "":
+    if cookies == " ":
         campaign_cookies = get_campaign_cookies(request.json.get('cookies'))
     try:
         logger.info(f"Campaign Cookies: {campaign_cookies}")
