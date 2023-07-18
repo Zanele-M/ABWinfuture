@@ -35,7 +35,7 @@ def get_campaign_cookies(req_cookies: str) -> dict:
 
     # Check if the request parameter is an empty string
     if req_cookies == "":
-        print('No campaign cookies found.')
+        print('No campaign cookies found ggvgvghghbhjbhj.')
         return {}
 
     # Split the cookies string into individual cookies
