@@ -12,6 +12,7 @@ logger = logging.getLogger(__name__)
 @bp.route('/run_campaigns', methods=['POST'])
 @cross_origin()
 def run_campaigns():
+    print("hehjbhfdsbhdbsbsdbnbnsdf")
     cookies = request.json.get('cookies')
     logger.info(f'lets check what the cookie is: {cookies}')
     campaign_cookies = {}

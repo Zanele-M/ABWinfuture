@@ -31,7 +31,7 @@ def is_valid_campaign_cookie_value(value: str) -> bool:
 
 
 def get_campaign_cookies(req_cookies: str) -> dict:
-    print('Getting campaign cookies from request:', req_cookies)
+    print('Getting campaign cookie data from request:', req_cookies)
 
     # Split the cookies string into individual cookies
     cookies = req_cookies.split(';')

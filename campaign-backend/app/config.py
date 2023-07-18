@@ -20,7 +20,6 @@ class DevelopmentConfig(Config):
     FLASK_ENV = os.getenv('FLASK_ENV_DEV')
     ROLLBAR_TOKEN = os.getenv('ROLLBAR_TOKEN_DEV')
 
-    print("jbhgrgfdbhfd", os.getenv('DATABASE_URL_DEV'))
 
     DEBUG = True
     ROLLBAR = {
