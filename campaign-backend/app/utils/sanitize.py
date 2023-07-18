@@ -1,5 +1,4 @@
 import logging
-import rollbar
 logger = logging.getLogger(__name__)
 
 import logging

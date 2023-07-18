@@ -21,8 +21,6 @@ function processCompletedCampaigns(originalContent: Map<number, OriginalContentV
       localStorage.removeItem(`click-campaignId-${campaignId}-assignedId-${value.assignedId}`);
       localStorage.removeItem(`impression-campaignId-${campaignId}-assignedId-${value.assignedId}`);
       originalContent.delete(campaignId);
-
-
     }
   });
 }
@@ -91,7 +89,7 @@ export function handleApiResponse(data: ApiResponseData, originalContent: Map<nu
   console.log("Data received: ", data);
 
 
-  const newCampaigns: number[] = Object.keys(data.campaignCookies).map((key) => JSON.parse(data.campaignCookies[key]).campaignId);
+  const newCampaigns: number[] = Object.keys(data.campaignCookies).map((key) => data.campaignCookies[key].campaignId);
   // Process completed campaigns
   const originalContentMap = originalContent || new Map();
   processCompletedCampaigns(originalContentMap, newCampaigns);
@@ -99,7 +97,7 @@ export function handleApiResponse(data: ApiResponseData, originalContent: Map<nu
 
   // Process new campaigns
   for (const [cookieName, cookieString] of Object.entries(data.campaignCookies)) {
-    const cookieValue: CookieData = JSON.parse(cookieString);
+    const cookieValue: CookieData = cookieString;
     const originalContentMap = originalContent || new Map();
     processNewCampaigns(originalContentMap, cookieValue);
 
